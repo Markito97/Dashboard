@@ -1,0 +1,11 @@
+.myI {
+  fill: white;
+  width: 48px;
+  height: 48px;
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+}
+
+.myI:hover {
+  fill: rgb(82, 82, 82);
+}
