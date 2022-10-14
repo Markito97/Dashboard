@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { CheckOut } from "./CheckOut";
+import { Products } from "./Products";
 
 export const DashBoard = () => {
   const [isShow, setIsShow] = useState<boolean>(false);
@@ -21,6 +22,7 @@ export const DashBoard = () => {
       description: "average",
     },
   ];
+  const [showTables, setShowTables] = useState<boolean>(true);
 
   const showCheckOut = (e: React.MouseEvent) => {
     const id = (e.target as HTMLElement).id;
@@ -28,49 +30,60 @@ export const DashBoard = () => {
       if (element.id === id) {
         setIsShow(true);
         setId(id);
+        setShowTables(false);
       }
     });
   };
 
+  const remove = () => {
+    setShowTables(true);
+  };
+
+  const field = tables.map((table, index) => {
+    if (table.description === "large") {
+      return (
+        <div
+          className="large__table"
+          onClick={showCheckOut}
+          id={`${table.id}`}
+          key={index}
+        >
+          {table.number}
+        </div>
+      );
+    } else if (table.description === "small") {
+      return (
+        <div
+          className="small__table"
+          onClick={showCheckOut}
+          id={`${table.id}`}
+          key={index}
+        >
+          {table.number}
+        </div>
+      );
+    } else if (table.description === "average") {
+      return (
+        <div
+          className="average__table"
+          onClick={showCheckOut}
+          id={`${table.id}`}
+          key={index}
+        >
+          {table.number}
+        </div>
+      );
+    }
+  });
+
   return (
     <div className="main__dashboard">
       <div className="table__arrangement">
-        {tables.map((table, index) => {
-          if (table.description === "large") {
-            return (
-              <div
-                className="large__table"
-                onClick={showCheckOut}
-                id={`${table.id}`}
-                key={index}
-              >
-                {table.number}
-              </div>
-            );
-          } else if (table.description === "small") {
-            return (
-              <div
-                className="small__table"
-                onClick={showCheckOut}
-                id={`${table.id}`}
-                key={index}
-              >
-                {table.number}
-              </div>
-            );
-          } else if (table.description === "average") {
-            return (
-              <div
-                className="average__table"
-                onClick={showCheckOut}
-                id={`${table.id}`}
-                key={index}
-              >
-                {table.number}
-              </div>
-            );
-          }
-        })}
+        {showTables ? (
+          field
+        ) : (
+          <Products showTables={showTables} remove={remove} />
+        )}
       </div>
       <CheckOut isShow={isShow} tables={tables} id={id} />
     </div>

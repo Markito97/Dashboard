@@ -119,6 +119,10 @@ button:hover {
   flex-wrap: wrap;
 }
 
+.table__arrangement__none {
+  display: none;
+}
+
 .large__table {
   color: white;
   display: flex;
