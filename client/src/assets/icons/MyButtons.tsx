@@ -28,7 +28,7 @@ export const MyButton: FC<IChild> = ({ children, onClick }) => {
   const handleClick = (e: React.MouseEvent) => {
     setCoords({
       x: e.clientX - (e.target as HTMLElement).offsetLeft,
-      y: e.clientY,
+      y: e.clientY - (e.target as HTMLElement).offsetTop,
     });
     onClick && onClick(e);
   };
