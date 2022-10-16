@@ -30,7 +30,16 @@ export const MyButton: FC<IChild> = ({ children, onClick }) => {
       x: e.clientX - (e.target as HTMLElement).offsetLeft,
       y: e.clientY - (e.target as HTMLElement).offsetTop,
     });
+    // remove changes
     onClick && onClick(e);
+  };
+
+  const zopa = () => {
+    return null;
+  };
+
+  const aboba = () => {
+    return null;
   };
 
   return (
