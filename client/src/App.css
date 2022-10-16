@@ -249,15 +249,14 @@ body {
 } */
 
 .ripple__btn {
-  border: none;
-  outline: none;
-  margin: 10px;
+  width: 100%;
+  margin: 10px 0px 10px 0px;
   padding: 12px 24px;
-  border-radius: 15px;
-  background: green;
+  background: rgba(81, 121, 63, 1);
   color: #fff;
   font-size: 18px;
   font-weight: 500;
+  position: relative;
   overflow: hidden;
   cursor: pointer;
 }
@@ -269,7 +268,7 @@ body {
   background: #fff;
   border-radius: 100%;
   transform: translate(-50%, -50%);
-  animation: ripple-effect 1s ease 1 forwards;
+  animation: ripple-effect 0.7s ease 1 forwards;
 }
 
 @keyframes ripple-effect {
@@ -282,7 +281,7 @@ body {
   100% {
     width: 500px;
     height: 500px;
-    opacity: 0;
+    opacity: 0.5;
   }
 }
 

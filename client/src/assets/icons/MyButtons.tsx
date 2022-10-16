@@ -15,7 +15,7 @@ export const MyButton: FC<IChild> = ({ children, onClick }) => {
 
       setTimeout(() => {
         setIsRipple(false);
-      }, 250);
+      }, 1000);
     } else {
       setIsRipple(false);
     }
@@ -25,23 +25,14 @@ export const MyButton: FC<IChild> = ({ children, onClick }) => {
     if (!isRipple) setCoords({ x: -1, y: -1 });
   }, [isRipple]);
 
-  const handleClick = (e: React.MouseEvent<HTMLElement>) => {
-    console.log(e.clientY);
-    // const eventX = (e.target as HTMLElement).offsetLeft;
-    // const eventY = (e.target as HTMLElement).offsetLeft;
+  const handleClick = (e: React.MouseEvent) => {
+    const eventX = (e.target as HTMLElement).offsetLeft;
+    const eventY = (e.target as HTMLElement).offsetLeft;
     setCoords({
-      x: e.clientX,
-      y: e.clientY,
+      x: e.clientX - eventX,
+      y: e.clientY - eventY,
     });
     onClick && onClick(e);
-  };
-
-  const zopa = () => {
-    return null;
-  };
-
-  const aboba = () => {
-    return null;
   };
 
   return (
@@ -50,8 +41,8 @@ export const MyButton: FC<IChild> = ({ children, onClick }) => {
         <span
           className="ripple"
           style={{
-            left: coords.x,
-            top: coords.y,
+            left: coords.x + "px",
+            top: coords.y + "px",
           }}
         ></span>
       ) : (
