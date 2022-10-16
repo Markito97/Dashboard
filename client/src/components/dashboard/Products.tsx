@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { MyButton } from "../../assets/icons/MyButtons";
 
 interface IShowTables {
   showTables: boolean;
@@ -17,7 +18,8 @@ export const Products: FC<IShowTables> = ({ showTables, remove }) => {
             <div className="product__price">Цена: 100р</div>
           </div>
           <div className="prod__btn">
-            <button className="product__btn">Add to Cart</button>
+            {/* <button className="product__btn">Add to Cart</button> */}
+            <MyButton>Zopa</MyButton>
           </div>
         </div>
       </div>
