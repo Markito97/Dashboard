@@ -15,7 +15,7 @@ export const MyButton: FC<IChild> = ({ children, onClick }) => {
 
       setTimeout(() => {
         setIsRipple(false);
-      }, 1000);
+      }, 250);
     } else {
       setIsRipple(false);
     }
@@ -25,12 +25,14 @@ export const MyButton: FC<IChild> = ({ children, onClick }) => {
     if (!isRipple) setCoords({ x: -1, y: -1 });
   }, [isRipple]);
 
-  const handleClick = (e: React.MouseEvent) => {
+  const handleClick = (e: React.MouseEvent<HTMLElement>) => {
+    console.log(e.clientY);
+    // const eventX = (e.target as HTMLElement).offsetLeft;
+    // const eventY = (e.target as HTMLElement).offsetLeft;
     setCoords({
-      x: e.clientX - (e.target as HTMLElement).offsetLeft,
-      y: e.clientY - (e.target as HTMLElement).offsetTop,
+      x: e.clientX,
+      y: e.clientY,
     });
-    // remove changes
     onClick && onClick(e);
   };
 
