@@ -73,7 +73,6 @@ export const CheckOut: FC<ITables> = ({ tables, isShow, id }) => {
                     className="checkout__price"
                   />
                 </div>
-                <button onClick={addToTable}>Check</button>
               </div>
             );
           }
@@ -83,4 +82,49 @@ export const CheckOut: FC<ITables> = ({ tables, isShow, id }) => {
   } else {
     return null;
   }
+};
+
+export const CheckOutTest = () => {
+  return (
+    <div className="check__out__test">
+      <div className="check__out__list__item">
+        <div className="check__out__item">
+          <div className="item__num">1</div>
+          <div className="item__title">Title</div>
+          <div className="item__description">Description</div>
+          <div className="item__amount">5</div>
+          <div className="item__remove">remove</div>
+        </div>
+        <div className="check__out__item">
+          <div className="item__num">2</div>
+          <div className="item__title">Title</div>
+          <div className="item__description">Description</div>
+          <div className="item__amount">5</div>
+          <div className="item__remove">remove</div>
+        </div>
+        <div className="check__out__item">
+          <div className="item__num">3</div>
+          <div className="item__title">Title</div>
+          <div className="item__description">Description</div>
+          <div className="item__amount">5</div>
+          <div className="item__remove">remove</div>
+        </div>
+        <div className="check__out__item">
+          <div className="item__num">4</div>
+          <div className="item__title">Title</div>
+          <div className="item__description">Description</div>
+          <div className="item__amount">5</div>
+          <div className="item__remove">remove</div>
+        </div>
+        <div className="check__out__item">
+          <div className="item__num">5</div>
+          <div className="item__title">Title</div>
+          <div className="item__description">Description</div>
+          <div className="item__amount">5</div>
+          <div className="item__remove">remove</div>
+        </div>
+      </div>
+      <button className="check__out__paid">Paid</button>
+    </div>
+  );
 };

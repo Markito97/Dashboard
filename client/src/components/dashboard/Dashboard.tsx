@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { CheckOut } from "./CheckOut";
+import { CheckOut, CheckOutTest } from "./CheckOut";
 import { Products } from "./Products";
 
 export const DashBoard = () => {
@@ -85,7 +85,11 @@ export const DashBoard = () => {
           <Products showTables={showTables} remove={remove} />
         )}
       </div>
-      <CheckOut isShow={isShow} tables={tables} id={id} />
+      {/* <CheckOut isShow={isShow} tables={tables} id={id} /> */}
+
+      {/* Need try test new checkout */}
+
+      <CheckOutTest />
     </div>
   );
 };
