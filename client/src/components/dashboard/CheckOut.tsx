@@ -1,6 +1,7 @@
 import { IShow } from "../../types/types";
 import { FC } from "react";
 import React, { useState } from "react";
+import { MyRippleBtn } from "../../assets/icons/MyButtons";
 
 interface ITable {
   id: string;
@@ -124,7 +125,11 @@ export const CheckOutTest = () => {
           <div className="item__remove">remove</div>
         </div>
       </div>
-      <button className="check__out__paid">Paid</button>
+      <div>
+        <MyRippleBtn type={"button"} id={"1"} className={""} ripple={"#ffffff"}>
+          Aboba
+        </MyRippleBtn>
+      </div>
     </div>
   );
 };

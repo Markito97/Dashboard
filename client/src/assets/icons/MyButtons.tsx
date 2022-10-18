@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { CSSProperties, FC, useEffect, useState } from "react";
 
 interface IChild {
   children: React.ReactNode;
@@ -49,6 +49,71 @@ export const MyButton: FC<IChild> = ({ children, onClick }) => {
         ""
       )}
       <span className="content">{children}</span>
+    </button>
+  );
+};
+
+interface IBtn {
+  type: "button";
+  id: string;
+  className: string;
+  ripple: string;
+  style?: CSSProperties | undefined;
+
+  children: React.ReactNode;
+  onClick?: React.MouseEventHandler;
+}
+
+// {type, id, className, ripple, onClick, style,children}
+
+export const MyRippleBtn: FC<IBtn> = ({
+  type,
+  id,
+  className,
+  ripple,
+  onClick,
+  style,
+  children,
+}) => {
+  useEffect(() => {
+    const btnRipple: HTMLElement[] = Array.from(
+      document.querySelectorAll(".btn-ripple")
+    );
+    btnRipple.forEach((btn) => {
+      btn.onclick = ({ pageX, pageY, currentTarget }) => {
+        let x =
+          ((pageX - (currentTarget as HTMLElement).offsetLeft) * 100) /
+          (currentTarget as HTMLElement).offsetWidth;
+        let y =
+          ((pageY = (currentTarget as HTMLAreaElement).offsetTop) * 100) /
+          (currentTarget as HTMLElement).offsetHeight;
+        const ripple = document.createElement("span");
+        const rippleColor = btn.dataset.ripple || "#212129";
+        ripple.classList.add("ripple-effect");
+        ripple.style.background = rippleColor;
+
+        btn.appendChild(ripple);
+        ripple.style.left = x + "%";
+        ripple.style.top = y + "%";
+
+        setTimeout(() => {
+          ripple.remove();
+        }, 700);
+      };
+    });
+  }, []);
+
+  return (
+    <button
+      // type={type ? type : "button"}
+      // id={id}
+      // className={`btn btn-ripple ${className ? className : ""}`}
+      className="btn btn-ripple"
+      data-ripple={ripple}
+      // onClick={onClick}
+      // style={style}
+    >
+      {children}
     </button>
   );
 };

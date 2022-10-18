@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import { MyRippleBtn } from "../assets/icons/MyButtons";
 import { InvestSVG, FolderSVG, CoinSVG } from "../assets/icons/MyIcons";
 
 export const NavBar = () => {
@@ -24,6 +25,9 @@ export const NavBar = () => {
         <NavLink className="nav__link__item" to={"/test"}>
           <FolderSVG />
         </NavLink>
+        <MyRippleBtn type={"button"} id={"1"} className={""} ripple={"#ffffff"}>
+          Aboba
+        </MyRippleBtn>
       </div>
       <input className="nav__search" type="text" placeholder="search" />
     </div>
