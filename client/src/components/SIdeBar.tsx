@@ -15,6 +15,9 @@ export const SideBar = () => {
       <NavLink className="side__link__item" to={"/charts"}>
         Charts
       </NavLink>
+      <NavLink className="side__link__item" to={"/productform"}>
+        Product Form
+      </NavLink>
     </div>
   );
 };

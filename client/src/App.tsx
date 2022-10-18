@@ -7,6 +7,7 @@ import { DashBoard } from "./components/dashboard/Dashboard";
 import { Trades } from "./components/Trades";
 import { Stocks } from "./components/Stocks";
 import { Charts } from "./components/Charts";
+import { ProductFrom } from "./components/ProductForm";
 
 export const App = () => {
   return (
@@ -20,6 +21,7 @@ export const App = () => {
             <Route path={"/trades"} element={<Trades />} />
             <Route path={"/stocks"} element={<Stocks />} />
             <Route path={"/charts"} element={<Charts />} />
+            <Route path={"/productform"} element={<ProductFrom />} />
           </Routes>
         </div>
       </div>

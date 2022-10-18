@@ -327,3 +327,37 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.28);
   box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
 }
+
+table {
+  border-spacing: 0px 15px;
+  width: 100%;
+  border-collapse: separate;
+}
+
+td,
+tr {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 25px;
+  border: 1px solid rgba(0, 0, 0, 0.28);
+  border-right: none;
+  border-left: none;
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+}
+
+td:first-child {
+  border-left: 1px solid rgba(0, 0, 0, 0.28);
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+}
+
+td:last-child {
+  border-right: 1px solid rgba(0, 0, 0, 0.28);
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+}
+
+.stocks__main {
+  margin: 25px;
+  width: 100%;
+}
