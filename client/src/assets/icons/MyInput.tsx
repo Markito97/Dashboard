@@ -1,3 +1,3 @@
 export const MyInput = () => {
-  return null;
+  return <div className="main"></div>;
 };

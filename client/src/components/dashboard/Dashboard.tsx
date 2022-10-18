@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { MyRippleBtn } from "../../assets/icons/MyButtons";
 import { CheckOut, CheckOutTest } from "./CheckOut";
 import { Products } from "./Products";
 
@@ -88,7 +89,9 @@ export const DashBoard = () => {
       {/* <CheckOut isShow={isShow} tables={tables} id={id} /> */}
 
       {/* Need try test new checkout */}
-
+      <MyRippleBtn type={"button"} id={"1"} className={""} ripple={"#ffffff"}>
+        Aboba
+      </MyRippleBtn>
       <CheckOutTest />
     </div>
   );

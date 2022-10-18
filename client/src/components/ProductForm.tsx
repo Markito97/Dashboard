@@ -1,3 +1,5 @@
+import { MyInput } from "../assets/icons/MyInput";
+
 export const ProductFrom = () => {
   return (
     <div className="product__post__form">
@@ -9,6 +11,7 @@ export const ProductFrom = () => {
         <button>Create new prop</button>
         <button>Post</button>
       </div>
+      <MyInput />
     </div>
   );
 };

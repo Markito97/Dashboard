@@ -78,6 +78,9 @@ export const CheckOut: FC<ITables> = ({ tables, isShow, id }) => {
             );
           }
         })}
+        <MyRippleBtn type={"button"} id={"1"} className={""} ripple={"#ffffff"}>
+          Aboba
+        </MyRippleBtn>
       </div>
     );
   } else {

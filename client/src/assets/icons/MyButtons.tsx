@@ -85,8 +85,9 @@ export const MyRippleBtn: FC<IBtn> = ({
           ((pageX - (currentTarget as HTMLElement).offsetLeft) * 100) /
           (currentTarget as HTMLElement).offsetWidth;
         let y =
-          ((pageY = (currentTarget as HTMLAreaElement).offsetTop) * 100) /
+          ((pageY - (currentTarget as HTMLElement).offsetTop) * 100) /
           (currentTarget as HTMLElement).offsetHeight;
+        console.log(y);
         const ripple = document.createElement("span");
         const rippleColor = btn.dataset.ripple || "#212129";
         ripple.classList.add("ripple-effect");
@@ -104,16 +105,18 @@ export const MyRippleBtn: FC<IBtn> = ({
   }, []);
 
   return (
-    <button
-      // type={type ? type : "button"}
-      // id={id}
-      // className={`btn btn-ripple ${className ? className : ""}`}
-      className="btn btn-ripple"
-      data-ripple={ripple}
-      // onClick={onClick}
-      // style={style}
-    >
-      {children}
-    </button>
+    <div>
+      <button
+        // type={type ? type : "button"}
+        // id={id}
+        // className={`btn btn-ripple ${className ? className : ""}`}
+        className="btn btn-ripple"
+        data-ripple={ripple}
+        // onClick={onClick}
+        // style={style}
+      >
+        {children}
+      </button>
+    </div>
   );
 };

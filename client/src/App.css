@@ -13,7 +13,8 @@
   width: 100%;
 }
 
-body {
+body,
+html {
   height: 100%;
   width: 100%;
 }
@@ -158,10 +159,10 @@ body {
   flex-direction: column;
 }
 
-.checkout__inputs {
+/* .checkout__inputs {
   display: flex;
   flex-direction: column;
-}
+} */
 
 .checkout__name {
   border: 3px solid #eeeeee;
@@ -388,7 +389,6 @@ td:last-child {
   pointer-events: none;
   z-index: 5;
   animation: ripple 0.7s linear infinite;
-  background: "#212129";
 }
 
 @keyframes ripple {
@@ -402,4 +402,14 @@ td:last-child {
     height: 500px;
     opacity: 0;
   }
+}
+
+.main {
+  width: 100%;
+  display: block;
+}
+
+.mini__main {
+  height: 56px;
+  padding-top: 0;
 }
