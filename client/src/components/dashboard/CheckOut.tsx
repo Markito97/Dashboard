@@ -1,7 +1,7 @@
 import { IShow } from "../../types/types";
 import { FC } from "react";
 import React, { useState } from "react";
-import { MyRippleBtn } from "../../assets/icons/MyButtons";
+import { MyRippleBtn } from "../../assets/UI/buttons/MyButtons";
 
 interface ITable {
   id: string;
@@ -78,9 +78,6 @@ export const CheckOut: FC<ITables> = ({ tables, isShow, id }) => {
             );
           }
         })}
-        <MyRippleBtn type={"button"} id={"1"} className={""} ripple={"#ffffff"}>
-          Aboba
-        </MyRippleBtn>
       </div>
     );
   } else {
@@ -129,9 +126,7 @@ export const CheckOutTest = () => {
         </div>
       </div>
       <div>
-        <MyRippleBtn type={"button"} id={"1"} className={""} ripple={"#ffffff"}>
-          Aboba
-        </MyRippleBtn>
+        <MyRippleBtn ripple={"#ffffff"}>Aboba</MyRippleBtn>
       </div>
     </div>
   );

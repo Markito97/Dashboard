@@ -1,6 +1,4 @@
 import { FC } from "react";
-import { MyButton } from "../../assets/icons/MyButtons";
-import { MyInput } from "../../assets/icons/MyInput";
 
 interface IShowTables {
   showTables: boolean;
@@ -20,8 +18,6 @@ export const Products: FC<IShowTables> = ({ showTables, remove }) => {
           </div>
           <div className="prod__btn">
             {/* <button className="product__btn">Add to Cart</button> */}
-            <MyInput />
-            <MyButton>Zopa</MyButton>
           </div>
         </div>
       </div>
