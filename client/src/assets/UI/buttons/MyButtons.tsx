@@ -6,9 +6,16 @@ interface IBtn {
   children: React.ReactNode;
   width?: string;
   height?: string;
+  padding?: string;
 }
 
-export const MyRippleBtn: FC<IBtn> = ({ width, height, ripple, children }) => {
+export const MyRippleBtn: FC<IBtn> = ({
+  width,
+  height,
+  padding,
+  ripple,
+  children,
+}) => {
   useEffect(() => {
     const btnRipple: HTMLElement[] = Array.from(
       document.querySelectorAll(`.${classes.btn}`)
@@ -40,7 +47,7 @@ export const MyRippleBtn: FC<IBtn> = ({ width, height, ripple, children }) => {
 
   return (
     <button
-      style={{ width, height }}
+      style={{ width, height, padding }}
       className={`${classes.btn} ${classes.btnRipple}`}
       data-ripple={ripple}
     >

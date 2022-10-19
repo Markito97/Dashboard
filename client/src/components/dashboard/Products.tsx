@@ -18,7 +18,7 @@ export const Products: FC<IShowTables> = ({ showTables, remove }) => {
             <div className="product__price">Цена: 100р</div>
           </div>
           <div className="prod__btn">
-            <MyRippleBtn width="100%" ripple={"#ffffff"}>
+            <MyRippleBtn width="100%" padding="8px" ripple={"#ffffff"}>
               Add to Cart
             </MyRippleBtn>
           </div>

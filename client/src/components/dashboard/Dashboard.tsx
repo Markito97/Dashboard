@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { MyRippleBtn } from "../../assets/UI/buttons/MyButtons";
-import { CheckOut, CheckOutTest } from "./CheckOut";
+import { CheckOutTest } from "./CheckOut";
 import { Products } from "./Products";
 
 export const DashBoard = () => {
@@ -90,7 +90,7 @@ export const DashBoard = () => {
 
       {/* Need try test new checkout */}
 
-      <CheckOutTest />
+      <CheckOutTest isShow={isShow} tables={tables} id={id} />
     </div>
   );
 };
