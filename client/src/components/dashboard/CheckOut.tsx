@@ -125,9 +125,7 @@ export const CheckOutTest = () => {
           <div className="item__remove">remove</div>
         </div>
       </div>
-      <div>
-        <MyRippleBtn ripple={"#ffffff"}>Aboba</MyRippleBtn>
-      </div>
+      <div>{/* <MyRippleBtn ripple={"#ffffff"}>Aboba</MyRippleBtn> */}</div>
     </div>
   );
 };
