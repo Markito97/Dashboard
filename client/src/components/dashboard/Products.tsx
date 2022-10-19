@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { MyRippleBtn } from "../../assets/UI/buttons/MyButtons";
 
 interface IShowTables {
   showTables: boolean;
@@ -17,7 +18,9 @@ export const Products: FC<IShowTables> = ({ showTables, remove }) => {
             <div className="product__price">Цена: 100р</div>
           </div>
           <div className="prod__btn">
-            {/* <button className="product__btn">Add to Cart</button> */}
+            <MyRippleBtn width="100%" ripple={"#ffffff"}>
+              Add to Cart
+            </MyRippleBtn>
           </div>
         </div>
       </div>

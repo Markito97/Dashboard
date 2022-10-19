@@ -4,21 +4,23 @@ import classes from "./MyButton.module.css";
 interface IBtn {
   ripple: string;
   children: React.ReactNode;
+  width?: string;
+  height?: string;
 }
 
-export const MyRippleBtn: FC<IBtn> = ({ ripple, children }) => {
+export const MyRippleBtn: FC<IBtn> = ({ width, height, ripple, children }) => {
   useEffect(() => {
     const btnRipple: HTMLElement[] = Array.from(
       document.querySelectorAll(`.${classes.btn}`)
     );
     btnRipple.forEach((btn) => {
       btn.onclick = ({ pageX, pageY, currentTarget }) => {
-        let currentOffSetLeft = (currentTarget as HTMLElement).offsetLeft;
-        let currentOffSetTop = (currentTarget as HTMLElement).offsetTop;
-        let currentOffSetWidth = (currentTarget as HTMLElement).offsetWidth;
-        let currentOffSetHeight = (currentTarget as HTMLElement).offsetHeight;
-        let axiosX = ((pageX - currentOffSetLeft) * 100) / currentOffSetWidth;
-        let axiosY = ((pageY - currentOffSetTop) * 100) / currentOffSetHeight;
+        const currentOffSetLeft = (currentTarget as HTMLElement).offsetLeft;
+        const currentOffSetTop = (currentTarget as HTMLElement).offsetTop;
+        const currentOffSetWidth = (currentTarget as HTMLElement).offsetWidth;
+        const currentOffSetHeight = (currentTarget as HTMLElement).offsetHeight;
+        const axiosX = ((pageX - currentOffSetLeft) * 100) / currentOffSetWidth;
+        const axiosY = ((pageY - currentOffSetTop) * 100) / currentOffSetHeight;
         const ripple = document.createElement("span");
         const rippleColor = btn.dataset.ripple || "#212129";
         console.log(classes.rippleEffect);
@@ -38,6 +40,7 @@ export const MyRippleBtn: FC<IBtn> = ({ ripple, children }) => {
 
   return (
     <button
+      style={{ width, height }}
       className={`${classes.btn} ${classes.btnRipple}`}
       data-ripple={ripple}
     >
