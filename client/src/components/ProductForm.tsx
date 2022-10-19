@@ -1,4 +1,4 @@
-import { MyInput } from "../assets/icons/MyInput";
+import { MyInput } from "../assets/UI/inputs/MyInput";
 
 export const ProductFrom = () => {
   return (

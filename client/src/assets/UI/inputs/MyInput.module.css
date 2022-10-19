@@ -1,0 +1,31 @@
+.form {
+  width: 300px;
+  height: 50px;
+  position: relative;
+}
+
+.form .search__input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: 2px solid green;
+  /* outline: blue; */
+  outline-color: rgb(55, 55, 251);
+  padding: 0 10px;
+  font-size: 20px;
+}
+
+.form .placeholder__search {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  text-transform: capitalize;
+  font-size: 18px;
+  transition: top 0.5s;
+  padding: 0 5px;
+}
+
+.form .search__input:focus ~ .placeholder__search {
+  top: -10px;
+  background: #fff;
+}

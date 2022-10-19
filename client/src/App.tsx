@@ -10,6 +10,42 @@ import { Charts } from "./components/Charts";
 import { ProductFrom } from "./components/ProductForm";
 
 export const App = () => {
+  const mockData = [
+    {
+      date: "DD-MM-YY",
+      id: 1,
+      title: "-/--/-",
+      description: "-/--/-",
+      category: "A",
+      purchaseDollars: 100,
+      marginPercent: 50,
+      amount: 5,
+      priceDollars: 150,
+    },
+    {
+      date: "DD-MM-YY",
+      id: 2,
+      title: "T-/--/-",
+      description: "-/--/-",
+      category: "C",
+      purchaseDollars: 200,
+      marginPercent: 50,
+      amount: 19,
+      priceDollars: 350,
+    },
+    {
+      date: "DD-MM-YY",
+      id: 2,
+      title: "-/--/-",
+      description: "-/--/-",
+      category: "B",
+      purchaseDollars: 500,
+      marginPercent: 50,
+      amount: 15,
+      priceDollars: 750,
+    },
+  ];
+
   return (
     <BrowserRouter>
       <div className="App">

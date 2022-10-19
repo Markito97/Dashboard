@@ -84,15 +84,6 @@ html {
   flex-direction: column;
 }
 
-.post__data {
-  border: 3px solid #eeeeee;
-  height: 55px;
-  margin: 30px 30px 0 30px;
-  padding-left: 25px;
-  border-radius: 15px;
-  outline: none;
-}
-
 .btn__add_new-prop {
   display: flex;
   justify-content: space-between;
