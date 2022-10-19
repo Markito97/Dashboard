@@ -7,6 +7,7 @@ interface IBtn {
   width?: string;
   height?: string;
   padding?: string;
+  onClick?: () => void;
 }
 
 export const MyRippleBtn: FC<IBtn> = ({
@@ -15,6 +16,7 @@ export const MyRippleBtn: FC<IBtn> = ({
   padding,
   ripple,
   children,
+  onClick,
 }) => {
   useEffect(() => {
     const btnRipple: HTMLElement[] = Array.from(
@@ -30,7 +32,6 @@ export const MyRippleBtn: FC<IBtn> = ({
         const axiosY = ((pageY - currentOffSetTop) * 100) / currentOffSetHeight;
         const ripple = document.createElement("span");
         const rippleColor = btn.dataset.ripple || "#212129";
-        console.log(classes.rippleEffect);
         ripple.classList.add(`${classes.rippleEffect}`);
         ripple.style.background = rippleColor;
 
@@ -47,6 +48,7 @@ export const MyRippleBtn: FC<IBtn> = ({
 
   return (
     <button
+      onClick={onClick}
       style={{ width, height, padding }}
       className={`${classes.btn} ${classes.btnRipple}`}
       data-ripple={ripple}

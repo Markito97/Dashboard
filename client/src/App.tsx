@@ -8,8 +8,10 @@ import { Trades } from "./components/Trades";
 import { Stocks } from "./components/Stocks";
 import { Charts } from "./components/Charts";
 import { ProductFrom } from "./components/ProductForm";
+import { useState } from "react";
 
 export const App = () => {
+  const [isSale, setIsSale] = useState<string[]>(["aboba"]);
   const mockData = [
     {
       date: "DD-MM-YY",
@@ -53,7 +55,10 @@ export const App = () => {
         <div className="main__page">
           <SideBar />
           <Routes>
-            <Route path={"/dashboard"} element={<DashBoard />} />
+            <Route
+              path={"/dashboard"}
+              element={<DashBoard isSale={isSale} setIsSale={setIsSale} />}
+            />
             <Route path={"/trades"} element={<Trades />} />
             <Route path={"/stocks"} element={<Stocks />} />
             <Route path={"/charts"} element={<Charts />} />
