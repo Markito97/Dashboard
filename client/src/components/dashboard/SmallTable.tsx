@@ -1,15 +1,10 @@
-import { useState } from "react";
-import { CheckOutTest } from "./CheckOut";
+import { FC } from "react";
+import { IShowHandler } from "../../types/types";
 
-export const SmallTable = () => {
-  const [small, setSmall] = useState("");
-  const [isShow, setIsShow] = useState(false);
-  const check = () => {
-    setIsShow(true);
-  };
+export const SmallTable: FC<IShowHandler> = ({ onClick }) => {
   return (
-    <div onClick={check} className="small__table">
-      <CheckOutTest isShow={isShow} />
+    <div id={"2"} onClick={onClick} className="small__table">
+      2
     </div>
   );
 };

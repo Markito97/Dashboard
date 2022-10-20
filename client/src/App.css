@@ -353,3 +353,9 @@ td:last-child {
   margin: 25px;
   width: 100%;
 }
+
+.dashboard__content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
