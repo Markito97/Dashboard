@@ -1,22 +1,24 @@
-import React, { FC, useEffect } from "react";
+import React, { FC, useEffect, useState } from "react";
 import classes from "./MyButton.module.css";
 
 interface IBtn {
+  id?: string;
   ripple: string;
   children: React.ReactNode;
   width?: string;
   height?: string;
   padding?: string;
-  onClick?: () => void;
+  onCLick?: () => void;
 }
 
 export const MyRippleBtn: FC<IBtn> = ({
+  id,
   width,
   height,
   padding,
   ripple,
   children,
-  onClick,
+  onCLick,
 }) => {
   useEffect(() => {
     const btnRipple: HTMLElement[] = Array.from(
@@ -48,10 +50,11 @@ export const MyRippleBtn: FC<IBtn> = ({
 
   return (
     <button
-      onClick={onClick}
+      id={`${id}`}
       style={{ width, height, padding }}
       className={`${classes.btn} ${classes.btnRipple}`}
       data-ripple={ripple}
+      onClick={onCLick}
     >
       {children}
     </button>

@@ -13,6 +13,10 @@ import { useState } from "react";
 export const App = () => {
   const [sales, setSales] = useState<string[]>(["123", "123", "123"]);
 
+  const changeState = (value: string) => {
+    setSales([...sales, value]);
+  };
+
   return (
     <BrowserRouter>
       <div className="App">
@@ -22,7 +26,7 @@ export const App = () => {
           <Routes>
             <Route
               path={"/dashboard"}
-              element={<DashBoard sales={sales} setSales={setSales} />}
+              element={<DashBoard isChangeState={changeState} />}
             />
             <Route path={"/trades"} element={<Trades />} />
             <Route path={"/stocks"} element={<Stocks />} />

@@ -5,16 +5,9 @@ import { ISales } from "../../types/types";
 interface ICheckProps {
   id: string;
   isShow: boolean;
-  sales: string[];
-  setSales: React.Dispatch<any>;
 }
 
-export const CheckOutTest: FC<ICheckProps> = ({
-  id,
-  isShow,
-  sales,
-  setSales,
-}) => {
+export const CheckOutTest: FC<ICheckProps> = ({ id, isShow }) => {
   const [large, setLarge] = useState<any>([]);
   const [small, setSmall] = useState<any>([]);
 
@@ -32,9 +25,7 @@ export const CheckOutTest: FC<ICheckProps> = ({
         <div className="check__out__list__item">
           {id === "1" ? <h1>small</h1> : <h1>large</h1>}
         </div>
-        <MyRippleBtn onClick={addProducts} ripple={"#ffffff"}>
-          Paid
-        </MyRippleBtn>
+        <MyRippleBtn ripple={"#ffffff"}>Paid</MyRippleBtn>
       </div>
     );
   } else {
