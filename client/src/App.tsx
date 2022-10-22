@@ -8,7 +8,13 @@ import { ProductFrom } from "./infuture/ProductForm";
 import { useState } from "react";
 
 export const App = () => {
-  const [sales, setSales] = useState<string[]>([]);
+  const [largeTable, setLargeTable] = useState<any[]>([]);
+  const [smallTable, setSmallTable] = useState([]);
+  const [averageTable, setAverageTable] = useState([]);
+
+  const changeLargeTable = (object: any) => {
+    setLargeTable([...largeTable, object]);
+  };
 
   const changeState = (value: object) => {};
 
@@ -19,7 +25,12 @@ export const App = () => {
         <div className="main__page">
           <SideBar />
           <Routes>
-            <Route path={"/dashboard"} element={<DashBoard />} />
+            <Route
+              path={"/dashboard"}
+              element={
+                <DashBoard largeTable={largeTable} large={changeLargeTable} />
+              }
+            />
             <Route path={"/productform"} element={<ProductFrom />} />
           </Routes>
         </div>

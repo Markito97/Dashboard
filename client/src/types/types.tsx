@@ -26,3 +26,8 @@ export interface IMyTables {
   height?: string;
   onClick?: (e: React.MouseEvent) => void;
 }
+
+export interface ILarge {
+  largeTable?: any[];
+  large: (object: any) => void;
+}

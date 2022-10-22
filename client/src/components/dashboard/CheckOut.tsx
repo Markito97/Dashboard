@@ -1,28 +1,29 @@
-import { FC, useState } from "react";
+import { table } from "console";
+import { FC, useEffect, useState } from "react";
 import { MyRippleBtn } from "../../assets/UI/buttons/MyButtons";
 
 interface ICheckProps {
   id: string;
+  largeTable?: any[];
   isShow: boolean;
 }
 
-export const CheckOutTest: FC<ICheckProps> = ({ id, isShow }) => {
-  const [large, setLarge] = useState<any>([]);
-  const [small, setSmall] = useState<any>([]);
+export const CheckOutTest: FC<ICheckProps> = ({ id, largeTable, isShow }) => {
+  console.log(largeTable);
+  console.log(id);
 
-  const addProducts = () => {
-    if (id === "1") {
-      setLarge([...large, "zopa"]);
-    } else {
-      setSmall([...small, "aboba"]);
-    }
-  };
-
+  useEffect(() => {}, [largeTable]);
   if (isShow) {
     return (
       <div className="check__out__test">
         <div className="check__out__list__item">
-          {id === "1" ? <h1>small</h1> : <h1>large</h1>}
+          {largeTable?.map((table, index) => {
+            if (id === "1") {
+              return <div key={index + 1}>{table.title}</div>;
+            } else {
+              return <h1>Aboba</h1>;
+            }
+          })}
         </div>
         <MyRippleBtn ripple={"#ffffff"}>Paid</MyRippleBtn>
       </div>
@@ -31,25 +32,3 @@ export const CheckOutTest: FC<ICheckProps> = ({ id, isShow }) => {
     return null;
   }
 };
-
-{
-  /* <div className="check__out__item"> */
-}
-{
-  /* <div className="item__num">1</div> */
-}
-{
-  /* <div className="item__title">Title</div> */
-}
-{
-  /* <div className="item__description">Description</div> */
-}
-{
-  /* <div className="item__amount">5</div> */
-}
-{
-  /* <div className="item__remove">remove</div> */
-}
-{
-  /* </div> */
-}

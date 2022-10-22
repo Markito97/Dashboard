@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { MyProductCard } from "../../assets/UI/productCard/MyProductCard";
 import mockdata from "../../data/mockdata";
+import { ILarge } from "../../types/types";
+import { FC } from "react";
 
-export const Products = () => {
+export const Products: FC<ILarge> = ({ large }) => {
   const showProduct = (id: string) => {
-    console.log(mockdata.find((prod) => prod.id == id));
+    const product = mockdata.find((prod) => prod.id === id);
+    large(product);
   };
 
   return (
