@@ -1,15 +1,6 @@
 import React, { FC, useEffect, useState } from "react";
+import { IBtn } from "../../../types/types";
 import classes from "./MyButton.module.css";
-
-interface IBtn {
-  id?: string;
-  ripple: string;
-  children: React.ReactNode;
-  width?: string;
-  height?: string;
-  padding?: string;
-  onCLick?: () => void;
-}
 
 export const MyRippleBtn: FC<IBtn> = ({
   id,

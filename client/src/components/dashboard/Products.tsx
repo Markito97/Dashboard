@@ -4,7 +4,7 @@ import mockdata from "../../data/mockdata";
 
 export const Products = () => {
   const showProduct = (id: string) => {
-    console.log(mockdata.filter((prod) => prod.id == id));
+    console.log(mockdata.find((prod) => prod.id == id));
   };
 
   return (

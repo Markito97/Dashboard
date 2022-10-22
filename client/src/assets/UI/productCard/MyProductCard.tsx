@@ -20,6 +20,10 @@ export const MyProductCard: FC<IMyProductProps> = ({
   price,
   show,
 }) => {
+  const test = () => {
+    show(id);
+  };
+
   return (
     <div className="product__card">
       <div className="product__picture">{picture}</div>
@@ -31,7 +35,7 @@ export const MyProductCard: FC<IMyProductProps> = ({
         </div>
         <div className="prod__btn">
           <MyRippleBtn
-            onCLick={() => show(id)}
+            onCLick={test}
             width="100%"
             padding="8px"
             ripple={"#ffffff"}

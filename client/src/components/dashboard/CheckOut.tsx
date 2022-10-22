@@ -1,6 +1,5 @@
 import { FC, useState } from "react";
 import { MyRippleBtn } from "../../assets/UI/buttons/MyButtons";
-import { ISales } from "../../types/types";
 
 interface ICheckProps {
   id: string;
