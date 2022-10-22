@@ -3,7 +3,7 @@ import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { NavBar } from "./infuture/NavBar";
 import { SideBar } from "./components/SIdeBar";
-import { DashBoard } from "./components/Dashboard";
+import { DashBoard } from "./pages/Dashboard";
 import { ProductFrom } from "./infuture/ProductForm";
 import { useState } from "react";
 

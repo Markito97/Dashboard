@@ -1,6 +1,6 @@
 import { table } from "console";
 import { FC, useEffect, useState } from "react";
-import { MyRippleBtn } from "../../assets/UI/buttons/MyButtons";
+import { MyRippleBtn } from "../assets/UI/buttons/MyButtons";
 
 interface ICheckProps {
   id: string;
@@ -12,7 +12,6 @@ export const CheckOutTest: FC<ICheckProps> = ({ id, largeTable, isShow }) => {
   console.log(largeTable);
   console.log(id);
 
-  useEffect(() => {}, [largeTable]);
   if (isShow) {
     return (
       <div className="check__out__test">

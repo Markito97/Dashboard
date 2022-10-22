@@ -1,8 +1,9 @@
 import { FC, useState } from "react";
 import { ILarge } from "../types/types";
-import { CheckOutTest } from "./dashboard/CheckOut";
-import { Products } from "./dashboard/Products";
-import { Tables } from "./Tables";
+// import { CheckOutTest } from "../components/CheckOut";
+// import { Products } from "../components/Products";
+// import { Tables } from "../components/Tables";
+import { CreateTable } from "../components/CreateTables";
 
 export const DashBoard: FC<ILarge> = ({ largeTable, large }) => {
   const [tableId, setTableId] = useState<string>("");
@@ -16,12 +17,13 @@ export const DashBoard: FC<ILarge> = ({ largeTable, large }) => {
 
   return (
     <div className="dashboard__content">
-      {isShow ? (
-        <Products large={large} />
+      <CreateTable />
+      {/* {isShow ? (
+        <Products large={large} tableId={tableId} />
       ) : (
         <Tables showHandler={showHandler} />
       )}
-      <CheckOutTest id={tableId} largeTable={largeTable} isShow={isShow} />
+      <CheckOutTest id={tableId} largeTable={largeTable} isShow={isShow} /> */}
     </div>
   );
 };

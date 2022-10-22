@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from "react";
-import { MyProductCard } from "../../assets/UI/productCard/MyProductCard";
-import mockdata from "../../data/mockdata";
-import { ILarge } from "../../types/types";
+import { MyProductCard } from "../assets/UI/productCard/MyProductCard";
+import mockdata from "../data/mockdata";
+import { ILarge } from "../types/types";
 import { FC } from "react";
 
-export const Products: FC<ILarge> = ({ large }) => {
+export const Products: FC<ILarge> = ({ tableId, large }) => {
   const showProduct = (id: string) => {
     const product = mockdata.find((prod) => prod.id === id);
-    large(product);
+    if (tableId === "1") {
+      large(product);
+    }
   };
+
+  console.log(tableId);
 
   return (
     <div className="product__list">

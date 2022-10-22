@@ -28,6 +28,7 @@ export interface IMyTables {
 }
 
 export interface ILarge {
+  tableId?: string;
   largeTable?: any[];
   large: (object: any) => void;
 }
