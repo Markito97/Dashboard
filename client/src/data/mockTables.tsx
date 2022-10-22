@@ -1,14 +1,14 @@
 export const mockTables = [
   {
     id: 1,
-    smallTable: "Small_Table",
+    tableSize: "Small_Table",
   },
   {
     id: 2,
-    largeTable: "Small_Table",
+    tableSize: "Large_Table",
   },
   {
     id: 3,
-    averageTable: "Small_Table",
+    tableSize: "Average_Table",
   },
 ];

@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { MyProductCard } from "../assets/UI/productCard/MyProductCard";
 import mockdata from "../data/mockdata";
-import { ILarge } from "../types/types";
 import { FC } from "react";
+
+export interface ILarge {
+  tableId?: string;
+  largeTable?: any[];
+  large: (object: any) => void;
+}
 
 export const Products: FC<ILarge> = ({ tableId, large }) => {
   const showProduct = (id: string) => {

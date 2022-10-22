@@ -8,6 +8,20 @@ import { ProductFrom } from "./infuture/ProductForm";
 import { useState } from "react";
 
 export const App = () => {
+  const [tables, setTables] = useState<any[]>([
+    {
+      id: 1,
+      tableSize: "Small_Table",
+    },
+    {
+      id: 2,
+      tableSize: "Large_Table",
+    },
+    {
+      id: 3,
+      tableSize: "Average_Table",
+    },
+  ]);
   const [largeTable, setLargeTable] = useState<any[]>([]);
   const [smallTable, setSmallTable] = useState([]);
   const [averageTable, setAverageTable] = useState([]);
@@ -17,6 +31,10 @@ export const App = () => {
   };
 
   const changeState = (value: object) => {};
+
+  const createTable = (table: any) => {
+    setTables([...tables, table]);
+  };
 
   return (
     <BrowserRouter>
@@ -28,7 +46,12 @@ export const App = () => {
             <Route
               path={"/dashboard"}
               element={
-                <DashBoard largeTable={largeTable} large={changeLargeTable} />
+                <DashBoard
+                  tables={tables}
+                  largeTable={largeTable}
+                  large={changeLargeTable}
+                  createTable={createTable}
+                />
               }
             />
             <Route path={"/productform"} element={<ProductFrom />} />
