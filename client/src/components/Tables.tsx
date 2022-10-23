@@ -16,9 +16,18 @@ export const Tables: FC<ITables> = ({
 }) => {
   const takeTableId = (e: React.MouseEvent) => {
     const id = (e.target as HTMLElement).id;
-    const chekedTables = tables.filter((el) => el.id == id);
-    const res = (chekedTables[0].checked = true);
-    checkedHandler(res);
+
+    // const chekedTables = tables.filter((el) => el.id == id);
+    // const res = (chekedTables[0].checked = true);
+    checkedHandler(
+      tables.map((table) => {
+        if (table.id == id) {
+          return { ...table, checked: !table.checked };
+        } else {
+          return table;
+        }
+      })
+    );
     showHandler(id);
   };
 
@@ -26,7 +35,6 @@ export const Tables: FC<ITables> = ({
     <div className="table__arrangement">
       {tables.map((table, index) => {
         if (table.tableSize === "small") {
-          console.log(tables);
           return (
             <MyTable
               key={table.id}

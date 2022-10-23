@@ -8,9 +8,9 @@ export interface ILarge {
   tables: any[];
   tableId?: string;
   largeTable?: any[];
-  large: (object: any) => void;
-  createTable: (table: any) => void;
-  checkedHandler: (object: any) => void;
+  large?: (object: any) => void;
+  createTable?: (table: any) => void;
+  checkedHandler: (res: any) => void;
 }
 
 export const DashBoard: FC<ILarge> = ({
