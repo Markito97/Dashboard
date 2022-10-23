@@ -29,7 +29,7 @@ export const DashBoard: FC<ILarge> = ({
     <div className="dashboard__content">
       <CreateTable create={createTable} />
       {isShow ? (
-        <Products large={large} tableId={tableId} />
+        <Products tables={tables} large={large} tableId={tableId} />
       ) : (
         <Tables tables={tables} showHandler={showHandler} />
       )}

@@ -4,20 +4,21 @@ import mockdata from "../data/mockdata";
 import { FC } from "react";
 
 export interface ILarge {
+  tables: any[];
   tableId?: string;
   largeTable?: any[];
   large: (object: any) => void;
 }
 
-export const Products: FC<ILarge> = ({ tableId, large }) => {
+export const Products: FC<ILarge> = ({ tables, tableId, large }) => {
   const showProduct = (id: string) => {
     const product = mockdata.find((prod) => prod.id === id);
-    if (tableId === "1") {
-      large(product);
-    }
+    tables.forEach((el) => {
+      if (el.id === tableId) {
+        large(product);
+      }
+    });
   };
-
-  console.log(tableId);
 
   return (
     <div className="product__list">

@@ -9,22 +9,13 @@ interface ICheckProps {
 }
 
 export const CheckOutTest: FC<ICheckProps> = ({ id, largeTable, isShow }) => {
-  console.log(largeTable);
-  console.log(id);
-
   if (isShow) {
     return (
       <div className="check__out__test">
-        <div className="check__out__list__item">
-          {largeTable?.map((table, index) => {
-            if (id === "1") {
-              return <div key={index + 1}>{table.title}</div>;
-            } else {
-              return <h1>Aboba</h1>;
-            }
-          })}
-        </div>
-        <MyRippleBtn ripple={"#ffffff"}>Paid</MyRippleBtn>
+        <div className="check__out__list__item"></div>
+        <MyRippleBtn padding="15px" margin="25px" ripple={"#ffffff"}>
+          Paid
+        </MyRippleBtn>
       </div>
     );
   } else {

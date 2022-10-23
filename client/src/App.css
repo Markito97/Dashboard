@@ -58,7 +58,6 @@ html {
 
 .side__bar {
   height: calc(100vh - 95px);
-  width: 500px;
   background: #eeeeee;
 }
 
@@ -70,6 +69,7 @@ html {
   display: flex;
   flex-direction: column;
   text-decoration: none;
+  text-transform: uppercase;
 }
 
 .main__dashboard {
@@ -129,6 +129,7 @@ html {
 }
 
 .product__list {
+  margin: 25px;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -253,6 +254,8 @@ td:last-child {
 }
 
 .table__select {
+  /* outline-style: #46abfd; */
+  margin: 25px;
   width: 350px;
   height: 50px;
   text-align: center;

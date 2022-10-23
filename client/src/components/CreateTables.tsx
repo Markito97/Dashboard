@@ -1,7 +1,7 @@
 import { FC, useState } from "react";
 import { MyTable } from "../assets/UI/tables/MyTable";
 import { mockTables } from "../data/mockTables";
-import { v4 as uidv4 } from "uuid";
+import { v4 as uuidv4 } from "uuid";
 import { MyRippleBtn } from "../assets/UI/buttons/MyButtons";
 
 interface ICreateTableProps {
@@ -13,7 +13,7 @@ export const CreateTable: FC<ICreateTableProps> = ({ create }) => {
 
   const createTable = () => {
     const newTable = {
-      id: uidv4(),
+      id: uuidv4(),
       tableSize: option,
     };
     create(newTable);
@@ -31,7 +31,12 @@ export const CreateTable: FC<ICreateTableProps> = ({ create }) => {
         <option value="average">Average</option>
         <option value="large">Large</option>
       </select>
-      <MyRippleBtn padding="15px" onCLick={createTable} ripple={"#ffffff"}>
+      <MyRippleBtn
+        padding="15px"
+        margin="25px"
+        onCLick={createTable}
+        ripple={"#ffffff"}
+      >
         Create table
       </MyRippleBtn>
     </div>

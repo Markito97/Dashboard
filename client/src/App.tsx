@@ -8,20 +8,7 @@ import { ProductFrom } from "./infuture/ProductForm";
 import { useState } from "react";
 
 export const App = () => {
-  const [tables, setTables] = useState<any[]>([
-    {
-      id: 1,
-      tableSize: "Small_Table",
-    },
-    {
-      id: 2,
-      tableSize: "Large_Table",
-    },
-    {
-      id: 3,
-      tableSize: "Average_Table",
-    },
-  ]);
+  const [tables, setTables] = useState<any[]>([]);
   const [largeTable, setLargeTable] = useState<any[]>([]);
   const [smallTable, setSmallTable] = useState([]);
   const [averageTable, setAverageTable] = useState([]);

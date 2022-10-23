@@ -16,6 +16,7 @@ export interface IBtn {
   width?: string;
   height?: string;
   padding?: string;
+  margin?: string;
   onCLick?: () => void;
 }
 
@@ -25,10 +26,4 @@ export interface IMyTables {
   width?: string;
   height?: string;
   onClick?: (e: React.MouseEvent) => void;
-}
-
-export interface ILarge {
-  tableId?: string;
-  largeTable?: any[];
-  large: (object: any) => void;
 }
