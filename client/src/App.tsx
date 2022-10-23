@@ -8,19 +8,35 @@ import { ProductFrom } from "./infuture/ProductForm";
 import { useState } from "react";
 
 export const App = () => {
-  const [tables, setTables] = useState<any[]>([]);
+  const [tables, setTables] = useState<any[]>([
+    {
+      id: 1,
+      checked: false,
+      tableSize: "small",
+    },
+    {
+      id: 2,
+      checked: false,
+      tableSize: "average",
+    },
+    {
+      id: 3,
+      checked: false,
+      tableSize: "average",
+    },
+  ]);
   const [largeTable, setLargeTable] = useState<any[]>([]);
-  const [smallTable, setSmallTable] = useState([]);
-  const [averageTable, setAverageTable] = useState([]);
 
   const changeLargeTable = (object: any) => {
     setLargeTable([...largeTable, object]);
   };
 
-  const changeState = (value: object) => {};
-
   const createTable = (table: any) => {
     setTables([...tables, table]);
+  };
+
+  const checkedHandler = (object: any) => {
+    setLargeTable([...largeTable, object]);
   };
 
   return (
@@ -38,6 +54,7 @@ export const App = () => {
                   largeTable={largeTable}
                   large={changeLargeTable}
                   createTable={createTable}
+                  checkedHandler={checkedHandler}
                 />
               }
             />

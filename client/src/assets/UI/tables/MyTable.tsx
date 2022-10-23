@@ -8,7 +8,7 @@ export const MyTable: FC<IMyTables> = ({ id, children, width, onClick }) => {
       id={id}
       style={{ width }}
       onClick={onClick}
-      className={classes.myTables}
+      className={`${classes.myTables}`}
     >
       {children}
     </div>

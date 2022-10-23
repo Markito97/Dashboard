@@ -14,6 +14,7 @@ export const CreateTable: FC<ICreateTableProps> = ({ create }) => {
   const createTable = () => {
     const newTable = {
       id: uuidv4(),
+      checked: false,
       tableSize: option,
     };
     create(newTable);

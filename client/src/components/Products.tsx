@@ -15,7 +15,11 @@ export const Products: FC<ILarge> = ({ tables, tableId, large }) => {
     const product = mockdata.find((prod) => prod.id === id);
     tables.forEach((el) => {
       if (el.id === tableId) {
-        large(product);
+        const addToCart = {
+          tableId: tableId,
+          product: product,
+        };
+        large(addToCart);
       }
     });
   };

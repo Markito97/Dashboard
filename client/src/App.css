@@ -33,7 +33,6 @@ html {
   color: white;
   font-weight: bold;
   font-size: 48px;
-  margin: 35px;
   padding: 20px;
 }
 
@@ -263,4 +262,8 @@ td:last-child {
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: bold;
+}
+
+.check {
+  background: blue;
 }

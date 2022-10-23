@@ -14,7 +14,7 @@ export const CheckOutTest: FC<ICheckProps> = ({ id, largeTable, isShow }) => {
       <div className="check__out__test">
         <div className="check__out__list__item"></div>
         <MyRippleBtn padding="15px" margin="25px" ripple={"#ffffff"}>
-          Paid
+          Add to Cart
         </MyRippleBtn>
       </div>
     );
