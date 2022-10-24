@@ -6,7 +6,6 @@ import { SideBar } from "./components/SIdeBar";
 import { DashBoard } from "./pages/Dashboard";
 import { ProductFrom } from "./infuture/ProductForm";
 import { useState } from "react";
-import { toUnicode } from "punycode";
 
 export const App = () => {
   const [tables, setTables] = useState<any[]>([
@@ -23,7 +22,7 @@ export const App = () => {
     {
       id: 3,
       checked: false,
-      tableSize: "average",
+      tableSize: "large",
     },
   ]);
   const [largeTable, setLargeTable] = useState<any[]>([]);
@@ -32,9 +31,9 @@ export const App = () => {
   //   setLargeTable([...largeTable, object]);
   // };
 
-  // const createTable = (table: any) => {
-  //   setTables([...tables, table]);
-  // };
+  const createTable = (table: any) => {
+    setTables([...tables, table]);
+  };
 
   const checkedHandler = (res: object[]) => {
     setTables(res);
@@ -54,7 +53,7 @@ export const App = () => {
                   tables={tables}
                   largeTable={largeTable}
                   // large={changeLargeTable}
-                  // createTable={createTable}
+                  createTable={createTable}
                   checkedHandler={checkedHandler}
                 />
               }

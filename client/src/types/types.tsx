@@ -23,7 +23,14 @@ export interface IBtn {
 export interface IMyTables {
   id?: string;
   children: React.ReactNode;
+  background?: string;
   width?: string;
   height?: string;
   onClick?: (e: React.MouseEvent) => void;
+}
+
+export interface ITables {
+  tables: any[];
+  showHandler: (id: string) => void;
+  checkedHandler: (object: any) => void;
 }

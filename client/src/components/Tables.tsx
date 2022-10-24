@@ -1,13 +1,7 @@
 import React from "react";
 import { FC, useState } from "react";
 import { MyTable } from "../assets/UI/tables/MyTable";
-import classes from "../assets/UI/tables/MyTable.module.css";
-
-interface ITables {
-  tables: any[];
-  showHandler: (id: string) => void;
-  checkedHandler: (object: any) => void;
-}
+import { ITables } from "../types/types";
 
 export const Tables: FC<ITables> = ({
   checkedHandler,
@@ -15,14 +9,13 @@ export const Tables: FC<ITables> = ({
   showHandler,
 }) => {
   const takeTableId = (e: React.MouseEvent) => {
-    const id = (e.target as HTMLElement).id;
-
-    // const chekedTables = tables.filter((el) => el.id == id);
-    // const res = (chekedTables[0].checked = true);
+    const id: string = (e.target as HTMLElement).id;
+    const tab: HTMLElement | null = document.getElementById(id);
+    if (tab) tab.style.background = "#46abfd";
     checkedHandler(
       tables.map((table) => {
         if (table.id == id) {
-          return { ...table, checked: !table.checked };
+          return { ...table, checked: true };
         } else {
           return table;
         }
@@ -50,18 +43,7 @@ export const Tables: FC<ITables> = ({
             <MyTable
               key={table.id}
               id={table.id}
-              width="250px"
-              onClick={takeTableId}
-            >
-              {index + 1}
-            </MyTable>
-          );
-        } else {
-          return (
-            <MyTable
-              key={table.id}
-              id={table.id}
-              width="350px"
+              width="100px"
               onClick={takeTableId}
             >
               {index + 1}

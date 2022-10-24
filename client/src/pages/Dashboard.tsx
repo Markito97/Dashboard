@@ -9,7 +9,7 @@ export interface ILarge {
   tableId?: string;
   largeTable?: any[];
   large?: (object: any) => void;
-  createTable?: (table: any) => void;
+  createTable: (table: any) => void;
   checkedHandler: (res: any) => void;
 }
 
@@ -29,17 +29,14 @@ export const DashBoard: FC<ILarge> = ({
 
   return (
     <div className="dashboard__content">
-      {/* <CreateTable create={createTable} /> */}
-      {/* {isShow ? ( */}
-      {/* // <Products tables={tables} large={large} tableId={tableId} /> */}
-      {/* ) : ( */}
+      <CreateTable create={createTable} />
+      {/* <Products tables={tables} large={large} tableId={tableId} /> */}
       <Tables
         tables={tables}
         showHandler={showHandler}
         checkedHandler={checkedHandler}
       />
-      {/* )} */}
-      {/* <CheckOutTest id={tableId} largeTable={largeTable} isShow={isShow} /> */}
+      {/* <CheckOutTest id={tableId} largeTable={largeTable} isShow={isShow} />  */}
     </div>
   );
 };
