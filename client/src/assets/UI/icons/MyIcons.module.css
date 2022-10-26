@@ -1,9 +1,10 @@
 .myI {
-  fill: white;
-  width: 48px;
-  height: 48px;
+  fill: rgba(0, 9, 40, 1);
+  width: 32px;
+  height: 32px;
   fill-rule: evenodd;
   clip-rule: evenodd;
+  display: flex;
 }
 
 .myI:hover {

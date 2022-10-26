@@ -45,21 +45,13 @@ export const App = () => {
         <NavBar />
         <div className="main__page">
           <SideBar />
-          <Routes>
-            <Route
-              path={"/dashboard"}
-              element={
-                <DashBoard
-                  tables={tables}
-                  largeTable={largeTable}
-                  // large={changeLargeTable}
-                  createTable={createTable}
-                  checkedHandler={checkedHandler}
-                />
-              }
-            />
-            <Route path={"/productform"} element={<ProductFrom />} />
-          </Routes>
+          <DashBoard
+            tables={tables}
+            largeTable={largeTable}
+            // large={changeLargeTable}
+            createTable={createTable}
+            checkedHandler={checkedHandler}
+          />
         </div>
       </div>
     </BrowserRouter>

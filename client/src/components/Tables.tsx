@@ -10,12 +10,11 @@ export const Tables: FC<ITables> = ({
 }) => {
   const takeTableId = (e: React.MouseEvent) => {
     const id: string = (e.target as HTMLElement).id;
-    const tab: HTMLElement | null = document.getElementById(id);
-    if (tab) tab.style.background = "#46abfd";
+
     checkedHandler(
       tables.map((table) => {
         if (table.id == id) {
-          return { ...table, checked: true };
+          return { ...table, checked: !table.checked };
         } else {
           return table;
         }
@@ -29,23 +28,13 @@ export const Tables: FC<ITables> = ({
       {tables.map((table, index) => {
         if (table.tableSize === "small") {
           return (
-            <MyTable
-              key={table.id}
-              id={table.id}
-              width="100px"
-              onClick={takeTableId}
-            >
-              {index + 1}
+            <MyTable key={table.id} id={table.id} onClick={takeTableId}>
+              Small Desk
             </MyTable>
           );
         } else if (table.tableSize === "average") {
           return (
-            <MyTable
-              key={table.id}
-              id={table.id}
-              width="100px"
-              onClick={takeTableId}
-            >
+            <MyTable key={table.id} id={table.id} onClick={takeTableId}>
               {index + 1}
             </MyTable>
           );

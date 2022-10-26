@@ -15,7 +15,7 @@
 
 body,
 html {
-  height: 100%;
+  min-height: 100vh;
   width: 100%;
 }
 
@@ -26,7 +26,7 @@ html {
   display: flex;
   justify-content: flex-start;
   padding: 15px;
-  background: rgba(155, 187, 86, 0.99);
+  background: #46abfd;
 }
 
 .nav__bar__logo {
@@ -53,28 +53,21 @@ html {
 
 .main__page {
   display: flex;
+  min-height: calc(100vh - 95px);
 }
 
 .side__bar {
-  height: calc(100vh - 95px);
-  background: #eeeeee;
+  background: rgba(0, 9, 40, 1);
 }
 
 .side__link__item {
-  margin: 30px;
-  color: rgba(25, 23, 17, 0.6);
-  font-weight: bold;
-  font-size: 48px;
+  margin: 25px;
+  color: white;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
+  font-size: 36px;
   text-decoration: none;
-  text-transform: uppercase;
-}
-
-.main__dashboard {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
 }
 
 .product__post__form {
@@ -238,9 +231,8 @@ td:last-child {
 }
 
 .dashboard__content {
-  width: 100%;
+  flex-grow: 1;
   display: flex;
-  justify-content: space-between;
 }
 
 .create__table__form {
@@ -248,22 +240,17 @@ td:last-child {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  border: 1px solid rgba(0, 0, 0, 0.28);
-  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+  border: 3px solid rgba(0, 9, 40, 1);
 }
 
 .table__select {
-  /* outline-style: #46abfd; */
   margin: 25px;
   width: 350px;
   height: 50px;
   text-align: center;
   font-size: 19px;
-  text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: bold;
-}
-
-.check {
-  background: blue;
+  color: #fff;
+  background: rgba(0, 9, 40, 1);
 }
