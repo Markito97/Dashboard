@@ -28,6 +28,7 @@ export const DashBoard: FC<ILarge> = ({
   };
 
   return (
+    // <div className="test">
     <div className="dashboard__content">
       <CreateTable create={createTable} />
       {/* <Products tables={tables} large={large} tableId={tableId} /> */}
@@ -36,7 +37,9 @@ export const DashBoard: FC<ILarge> = ({
         showHandler={showHandler}
         checkedHandler={checkedHandler}
       />
-      {/* <CheckOutTest id={tableId} largeTable={largeTable} isShow={isShow} />  */}
+      <CheckOutTest id={tableId} largeTable={largeTable} isShow={isShow} />
     </div>
+
+    // </div>
   );
 };
