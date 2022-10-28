@@ -20,6 +20,41 @@ export const CheckOutTest: FC<ICheckProps> = ({ id, largeTable, isShow }) => {
             <div className="item__amount">5</div>
             <div className="item__price">100</div>
           </div>
+          <div className="check__out__item">
+            <div className="item__id">1.</div>
+            <div className="item__title">Title</div>
+            <div className="item__descriptino">Description</div>
+            <div className="item__amount">5</div>
+            <div className="item__price">100</div>
+          </div>
+          <div className="check__out__item">
+            <div className="item__id">1.</div>
+            <div className="item__title">Title</div>
+            <div className="item__descriptino">Description</div>
+            <div className="item__amount">5</div>
+            <div className="item__price">100</div>
+          </div>
+          <div className="check__out__item">
+            <div className="item__id">1.</div>
+            <div className="item__title">Title</div>
+            <div className="item__descriptino">Description</div>
+            <div className="item__amount">5</div>
+            <div className="item__price">100</div>
+          </div>
+          <div className="check__out__item">
+            <div className="item__id">1.</div>
+            <div className="item__title">Title</div>
+            <div className="item__descriptino">Description</div>
+            <div className="item__amount">5</div>
+            <div className="item__price">100</div>
+          </div>
+          <div className="check__out__item">
+            <div className="item__id">1.</div>
+            <div className="item__title">Title</div>
+            <div className="item__descriptino">Description</div>
+            <div className="item__amount">5</div>
+            <div className="item__price">100</div>
+          </div>
         </div>
         <div>
           <MyRippleBtn ripple={"#ffffff"}>Add to Cart</MyRippleBtn>
