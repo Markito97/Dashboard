@@ -21,27 +21,20 @@ export const CreateTable: FC<ICreateTableProps> = ({ create }) => {
   };
 
   return (
-    <div className="test">
-      <div className="create__table__form">
-        <select
-          value={option}
-          onChange={(e) => setOption(e.target.value)}
-          name="table__form"
-          className="table__select"
-        >
-          <option value="small">Small</option>
-          <option value="average">Average</option>
-          <option value="large">Large</option>
-        </select>
-        <MyRippleBtn
-          padding="15px"
-          margin="25px"
-          onCLick={createTable}
-          ripple={"#ffffff"}
-        >
-          Create table
-        </MyRippleBtn>
-      </div>
+    <div className="create__table__form">
+      <select
+        value={option}
+        onChange={(e) => setOption(e.target.value)}
+        name="table__form"
+        className="table__select"
+      >
+        <option value="small">Small</option>
+        <option value="average">Average</option>
+        <option value="large">Large</option>
+      </select>
+      <MyRippleBtn onCLick={createTable} ripple={"#ffffff"}>
+        Create table
+      </MyRippleBtn>
     </div>
   );
 };

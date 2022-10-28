@@ -24,8 +24,9 @@ export const Tables: FC<ITables> = ({
   };
 
   return (
-    <div className="table__arrangement">
-      {tables.map((table, index) => {
+    <div className="tables">
+      <div className="table__arrangement">
+        {/* {tables.map((table, index) => {
         if (table.tableSize === "small") {
           return (
             <MyTable key={table.id} id={table.id} onClick={takeTableId}>
@@ -39,7 +40,19 @@ export const Tables: FC<ITables> = ({
             </MyTable>
           );
         }
-      })}
+      })} */}
+        <MyTable children={undefined} />
+        <MyTable children={undefined} />
+        <MyTable children={undefined} />
+        <MyTable children={undefined} />
+        <MyTable children={undefined} />
+        <MyTable children={undefined} />
+        <MyTable children={undefined} />
+        <MyTable children={undefined} />
+        <MyTable children={undefined} />
+        <MyTable children={undefined} />
+        <MyTable children={undefined} />
+      </div>
     </div>
   );
 };
