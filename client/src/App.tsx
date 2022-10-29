@@ -1,5 +1,6 @@
 import * as React from "react";
-import "./App.css";
+import "./styles/App.css";
+import "./styles/reset.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { NavBar } from "./infuture/NavBar";
 import { SideBar } from "./components/SIdeBar";
@@ -41,17 +42,19 @@ export const App = () => {
 
   return (
     <BrowserRouter>
-      <div className="App">
-        <NavBar />
-        <div className="main__page">
-          <SideBar />
-          <DashBoard
-            tables={tables}
-            largeTable={largeTable}
-            // large={changeLargeTable}
-            createTable={createTable}
-            checkedHandler={checkedHandler}
-          />
+      <div className="wrapper">
+        <div className="container">
+          <NavBar />
+          <div className="main__page">
+            <SideBar />
+            <DashBoard
+              tables={tables}
+              largeTable={largeTable}
+              // large={changeLargeTable}
+              createTable={createTable}
+              checkedHandler={checkedHandler}
+            />
+          </div>
         </div>
       </div>
     </BrowserRouter>

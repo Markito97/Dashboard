@@ -10,7 +10,7 @@ import {
 export const SideBar = () => {
   return (
     <div className="side__bar">
-      <div>
+      <ul>
         <li className="side__link__item">
           <NavLink className="side__link" to={"/dashboard"}>
             <span className="side__icon__container">
@@ -27,6 +27,7 @@ export const SideBar = () => {
             <span className="side__item__name">Sales</span>
           </NavLink>
         </li>
+
         <li className="side__link__item">
           <NavLink className="side__link" to={"/dashboard"}>
             <span className="side__icon__container">
@@ -35,7 +36,6 @@ export const SideBar = () => {
             <span className="side__item__name">Stocks</span>
           </NavLink>
         </li>
-
         <li className="side__link__item">
           <NavLink className="side__link" to={"/dashboard"}>
             <span className="side__icon__container">
@@ -44,9 +44,9 @@ export const SideBar = () => {
             <span className="side__item__name">Charts</span>
           </NavLink>
         </li>
-      </div>
+      </ul>
 
-      <div className="settings">
+      <ul>
         <li className="side__link__item">
           <NavLink className="side__link" to={"/dashboard"}>
             <span className="side__icon__container">
@@ -55,7 +55,7 @@ export const SideBar = () => {
             <span className="side__item__name">Settings</span>
           </NavLink>
         </li>
-      </div>
+      </ul>
     </div>
   );
 };

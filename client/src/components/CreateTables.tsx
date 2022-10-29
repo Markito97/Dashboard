@@ -35,6 +35,8 @@ export const CreateTable: FC<ICreateTableProps> = ({ create }) => {
       <MyRippleBtn onCLick={createTable} ripple={"#ffffff"}>
         Create table
       </MyRippleBtn>
+      <MyRippleBtn ripple={"#ffffff"}>Sort by active</MyRippleBtn>
+      <MyRippleBtn ripple={"#ffffff"}>Sort by reserved</MyRippleBtn>
     </div>
   );
 };

@@ -2,7 +2,6 @@
   color: white;
   background: rgba(0, 9, 40, 1);
   font-size: 36px;
-  padding: 12px 35px;
 }
 
 .remove__table {
@@ -12,8 +11,6 @@
 }
 
 .table__content {
-  margin-top: 12px;
-  font-size: 18px;
   display: flex;
   flex-direction: column;
 }
@@ -21,10 +18,8 @@
 .flex__content {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 5px;
 }
 
 .reserved {
   display: flex;
-  justify-content: space-between;
 }

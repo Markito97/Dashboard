@@ -22,38 +22,30 @@ export const MyTable: FC<IMyTables> = ({
         <div>Small Desk</div>
         <RemoveSvg />
       </div>
-      <div className={classes.table__content}>
-        <div className={classes.flex__content}>
+      <ul>
+        <li>
           <span>Date:</span>
           <span>DD/MM/YYYY</span>
-        </div>
-        <div className={classes.flex__content}>
+        </li>
+        <li>
           <span>Time:</span>
           <span>Time</span>
-        </div>
-        <div className={classes.flex__content}>
+        </li>
+        <li>
           <span>Who Reserved:</span>
           <span>Abobus</span>
-        </div>
-        <div className={classes.flex__content}>
+        </li>
+        <li>
           <span>Persons:</span>
           <span>3</span>
-        </div>
-        <div className={classes.flex__content}>
+        </li>
+        <li>
           <span>Telephone:</span>
-          <span>
-            <strong>8-800-555-35-35</strong>
-          </span>
-        </div>
-      </div>
-      <div className={classes.reserved}>
-        <MyRippleBtn margin="8px 8px 8px 0px" padding="5px" ripple={"#ffffff"}>
-          Reserved
-        </MyRippleBtn>
-        <MyRippleBtn margin="8px 0px 8px 8px" padding="5px" ripple={"#ffffff"}>
-          Add Order
-        </MyRippleBtn>
-      </div>
+          <span>8-800-555-35-35</span>
+        </li>
+      </ul>
+      <MyRippleBtn ripple={"#ffffff"}>Reserved</MyRippleBtn>
+      <MyRippleBtn ripple={"#ffffff"}>Add Order</MyRippleBtn>
     </div>
   );
 };
