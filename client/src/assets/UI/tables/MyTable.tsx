@@ -18,8 +18,8 @@ export const MyTable: FC<IMyTables> = ({
       onClick={onClick}
       className={`${classes.myTables}`}
     >
-      <div className={classes.remove__table}>
-        <div>Small Desk</div>
+      <div className={classes.myTitle}>
+        <h1>Small Desk</h1>
         <RemoveSvg />
       </div>
       <ul>
@@ -44,8 +44,14 @@ export const MyTable: FC<IMyTables> = ({
           <span>8-800-555-35-35</span>
         </li>
       </ul>
-      <MyRippleBtn ripple={"#ffffff"}>Reserved</MyRippleBtn>
-      <MyRippleBtn ripple={"#ffffff"}>Add Order</MyRippleBtn>
+      <div className={classes.myTablesBtn}>
+        <MyRippleBtn padding="5px" ripple={"#ffffff"}>
+          Reserved
+        </MyRippleBtn>
+        <MyRippleBtn padding="5px" ripple={"#ffffff"}>
+          Add Order
+        </MyRippleBtn>
+      </div>
     </div>
   );
 };

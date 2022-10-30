@@ -4,24 +4,36 @@
   color: white;
   background: #144771;
   font-size: 18px;
+  border-radius: 10px;
 }
 
-.remove__table {
+.myTables h1 {
+  font-size: 24px;
+  padding: 5px 12px;
+  margin: 3px 8px;
+}
+
+.myTables ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.myTables li {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 12px;
+  margin: 3px 8px;
+}
+
+.myTitle {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.table__content {
-  display: flex;
-  flex-direction: column;
-}
-
-.flex__content {
+.myTablesBtn {
   display: flex;
   justify-content: space-between;
-}
-
-.reserved {
-  display: flex;
+  padding: 5px 12px;
+  margin: 3px 8px;
 }
