@@ -7,6 +7,7 @@ import { SideBar } from "./components/SIdeBar";
 import { DashBoard } from "./pages/Dashboard";
 import { ProductFrom } from "./infuture/ProductForm";
 import { useState } from "react";
+import { CreateTable } from "./components/CreateTables";
 
 export const App = () => {
   const [tables, setTables] = useState<any[]>([
@@ -41,22 +42,16 @@ export const App = () => {
   };
 
   return (
-    <BrowserRouter>
-      <div className="wrapper">
-        <div className="container">
-          <NavBar />
-          <div className="main__page">
-            <SideBar />
-            <DashBoard
-              tables={tables}
-              largeTable={largeTable}
-              // large={changeLargeTable}
-              createTable={createTable}
-              checkedHandler={checkedHandler}
-            />
-          </div>
-        </div>
+    <div className="wrapper">
+      <NavBar />
+      <div className="main">
+        <SideBar />
+        <DashBoard
+          tables={tables}
+          createTable={createTable}
+          checkedHandler={checkedHandler}
+        />
       </div>
-    </BrowserRouter>
+    </div>
   );
 };

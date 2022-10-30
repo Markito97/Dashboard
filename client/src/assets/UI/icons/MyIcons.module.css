@@ -1,10 +1,10 @@
 .myI {
-  fill: white;
+  fill: #fff;
   width: 32px;
   height: 32px;
   fill-rule: evenodd;
   clip-rule: evenodd;
-  display: inline-block;
+  display: flex;
 }
 
 .myI:hover {

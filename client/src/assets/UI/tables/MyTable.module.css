@@ -1,7 +1,9 @@
 .myTables {
+  display: flex;
+  flex-direction: column;
   color: white;
-  background: rgba(0, 9, 40, 1);
-  font-size: 36px;
+  background: #144771;
+  font-size: 18px;
 }
 
 .remove__table {

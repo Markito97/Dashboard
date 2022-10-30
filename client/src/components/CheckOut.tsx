@@ -11,51 +11,31 @@ interface ICheckProps {
 export const CheckOutTest: FC<ICheckProps> = ({ id, largeTable, isShow }) => {
   if (isShow) {
     return (
-      <div className="check__out">
-        <div className="check__out__list__item">
-          <div className="check__out__item">
-            <div className="item__id">1.</div>
-            <div className="item__title">Title</div>
-            <div className="item__descriptino">Description</div>
-            <div className="item__amount">5</div>
-            <div className="item__price">100</div>
-          </div>
-          <div className="check__out__item">
-            <div className="item__id">1.</div>
-            <div className="item__title">Title</div>
-            <div className="item__descriptino">Description</div>
-            <div className="item__amount">5</div>
-            <div className="item__price">100</div>
-          </div>
-          <div className="check__out__item">
-            <div className="item__id">1.</div>
-            <div className="item__title">Title</div>
-            <div className="item__descriptino">Description</div>
-            <div className="item__amount">5</div>
-            <div className="item__price">100</div>
-          </div>
-          <div className="check__out__item">
-            <div className="item__id">1.</div>
-            <div className="item__title">Title</div>
-            <div className="item__descriptino">Description</div>
-            <div className="item__amount">5</div>
-            <div className="item__price">100</div>
-          </div>
-          <div className="check__out__item">
-            <div className="item__id">1.</div>
-            <div className="item__title">Title</div>
-            <div className="item__descriptino">Description</div>
-            <div className="item__amount">5</div>
-            <div className="item__price">100</div>
-          </div>
-          <div className="check__out__item">
-            <div className="item__id">1.</div>
-            <div className="item__title">Title</div>
-            <div className="item__descriptino">Description</div>
-            <div className="item__amount">5</div>
-            <div className="item__price">100</div>
-          </div>
-        </div>
+      <div className="checkout__menu">
+        <ul className="checkout__menu__item">
+          <li className="checkout__list__item">
+            <span>1.</span>
+            <span>Title</span>
+            <span>Description</span>
+            <span>5</span>
+            <span>100</span>
+          </li>
+          <li className="checkout__list__item">
+            <span>1.</span>
+            <span>Title</span>
+            <span>Description</span>
+            <span>5</span>
+            <span>100</span>
+          </li>
+          <li className="checkout__list__item">
+            <span>1.</span>
+            <span>Title</span>
+            <span>Description</span>
+            <span>5</span>
+            <span>100</span>
+          </li>
+        </ul>
+
         <div>
           <MyRippleBtn ripple={"#ffffff"}>Add to Cart</MyRippleBtn>
         </div>

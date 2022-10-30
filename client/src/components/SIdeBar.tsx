@@ -9,51 +9,49 @@ import {
 
 export const SideBar = () => {
   return (
-    <div className="side__bar">
-      <ul>
-        <li className="side__link__item">
-          <NavLink className="side__link" to={"/dashboard"}>
-            <span className="side__icon__container">
+    <div className="sidebar__menu">
+      <ul className="sidebar__menu__list">
+        <li className="menu__list__item">
+          <a className="list__item">
+            <span className="icon__container">
               <GridSvg />
             </span>
-            <span className="side__item__name">Dashboard</span>
-          </NavLink>
+            <span>Dashboard</span>
+          </a>
         </li>
-        <li className="side__link__item">
-          <NavLink className="side__link" to={"/dashboard"}>
-            <span className="side__icon__container">
+        <li className="menu__list__item">
+          <a className="list__item">
+            <span className="icon__container">
               <CoinSVG />
             </span>
-            <span className="side__item__name">Sales</span>
-          </NavLink>
+            <span>Sales</span>
+          </a>
         </li>
-
-        <li className="side__link__item">
-          <NavLink className="side__link" to={"/dashboard"}>
-            <span className="side__icon__container">
+        <li className="menu__list__item">
+          <a className="list__item">
+            <span className="icon__container">
               <StocksSVG />
             </span>
-            <span className="side__item__name">Stocks</span>
-          </NavLink>
+            <span>Stocks</span>
+          </a>
         </li>
-        <li className="side__link__item">
-          <NavLink className="side__link" to={"/dashboard"}>
-            <span className="side__icon__container">
+        <li className="menu__list__item">
+          <a className="list__item">
+            <span className="icon__container">
               <InvestSVG />
             </span>
-            <span className="side__item__name">Charts</span>
-          </NavLink>
+            <span>Charts</span>
+          </a>
         </li>
       </ul>
-
       <ul>
-        <li className="side__link__item">
-          <NavLink className="side__link" to={"/dashboard"}>
-            <span className="side__icon__container">
+        <li className="menu__list__item">
+          <a className="list__item">
+            <span className="icon__container">
               <SettingsSVG />
             </span>
-            <span className="side__item__name">Settings</span>
-          </NavLink>
+            <span>Settings</span>
+          </a>
         </li>
       </ul>
     </div>

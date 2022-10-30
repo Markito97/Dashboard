@@ -52,6 +52,7 @@ export const Tables: FC<ITables> = ({
         <MyTable children={undefined} />
         <MyTable children={undefined} />
         <MyTable children={undefined} />
+        <MyTable children={undefined} />
       </div>
     </div>
   );

@@ -5,23 +5,23 @@ import { v4 as uuidv4 } from "uuid";
 import { MyRippleBtn } from "../assets/UI/buttons/MyButtons";
 
 interface ICreateTableProps {
-  create: (table: any) => void;
+  create?: (table: any) => void;
 }
 
 export const CreateTable: FC<ICreateTableProps> = ({ create }) => {
   const [option, setOption] = useState("small");
 
-  const createTable = () => {
-    const newTable = {
-      id: uuidv4(),
-      checked: false,
-      tableSize: option,
-    };
-    create(newTable);
-  };
+  // const createTable = () => {
+  //   const newTable = {
+  //     id: uuidv4(),
+  //     checked: false,
+  //     tableSize: option,
+  //   };
+  //   create(newTable);
+  // };
 
   return (
-    <div className="create__table__form">
+    <div className="create__table">
       <select
         value={option}
         onChange={(e) => setOption(e.target.value)}
@@ -32,9 +32,9 @@ export const CreateTable: FC<ICreateTableProps> = ({ create }) => {
         <option value="average">Average</option>
         <option value="large">Large</option>
       </select>
-      <MyRippleBtn onCLick={createTable} ripple={"#ffffff"}>
+      {/* <MyRippleBtn onCLick={createTable} ripple={"#ffffff"}>
         Create table
-      </MyRippleBtn>
+      </MyRippleBtn> */}
       <MyRippleBtn ripple={"#ffffff"}>Sort by active</MyRippleBtn>
       <MyRippleBtn ripple={"#ffffff"}>Sort by reserved</MyRippleBtn>
     </div>
