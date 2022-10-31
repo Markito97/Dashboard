@@ -5,6 +5,7 @@ import { CreateTable } from "../components/CreateTables";
 import { Tables } from "../components/Tables";
 
 export interface ILarge {
+  setDate: (date: string) => void;
   tables: any[];
   tableId?: string;
   largeTable?: any[];
@@ -14,6 +15,7 @@ export interface ILarge {
 }
 
 export const DashBoard: FC<ILarge> = ({
+  setDate,
   checkedHandler,
   createTable,
   tables,
@@ -32,6 +34,7 @@ export const DashBoard: FC<ILarge> = ({
       <div className="tables__container">
         <CreateTable create={createTable} />
         <Tables
+          setDate={setDate}
           checkedHandler={checkedHandler}
           tables={tables}
           showHandler={showHandler}

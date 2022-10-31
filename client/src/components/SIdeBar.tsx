@@ -16,7 +16,7 @@ export const SideBar = () => {
             <span className="icon__container">
               <GridSvg />
             </span>
-            <span>Dashboard</span>
+            <span className="item__name">Dashboard</span>
           </a>
         </li>
         <li className="menu__list__item">
@@ -24,7 +24,7 @@ export const SideBar = () => {
             <span className="icon__container">
               <CoinSVG />
             </span>
-            <span>Sales</span>
+            <span className="item__name">Sales</span>
           </a>
         </li>
         <li className="menu__list__item">
@@ -32,7 +32,7 @@ export const SideBar = () => {
             <span className="icon__container">
               <StocksSVG />
             </span>
-            <span>Stocks</span>
+            <span className="item__name">Stocks</span>
           </a>
         </li>
         <li className="menu__list__item">
@@ -40,7 +40,7 @@ export const SideBar = () => {
             <span className="icon__container">
               <InvestSVG />
             </span>
-            <span>Charts</span>
+            <span className="item__name">Charts</span>
           </a>
         </li>
       </ul>
@@ -50,7 +50,7 @@ export const SideBar = () => {
             <span className="icon__container">
               <SettingsSVG />
             </span>
-            <span>Settings</span>
+            <span className="item__name">Settings</span>
           </a>
         </li>
       </ul>

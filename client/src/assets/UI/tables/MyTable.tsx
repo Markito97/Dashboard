@@ -1,16 +1,25 @@
+import { table } from "console";
 import { FC } from "react";
 import { IMyTables } from "../../../types/types";
 import { MyRippleBtn } from "../buttons/MyButtons";
 import { RemoveSvg } from "../icons/MyIcons";
+import { MyInput } from "../inputs/MyInput";
+import { MySelect } from "../select/MySelect";
 import classes from "./MyTable.module.css";
 
 export const MyTable: FC<IMyTables> = ({
+  setDate,
+  tables,
   id,
   background,
   children,
   width,
   onClick,
 }) => {
+  const handlerDate = () => {
+    setDate("123");
+  };
+
   return (
     <div
       id={id}
@@ -25,7 +34,10 @@ export const MyTable: FC<IMyTables> = ({
       <ul>
         <li>
           <span>Date:</span>
-          <span>DD/MM/YYYY</span>
+          <input type="text" placeholder="DD" />
+          {/* <input type="text" placeholder="DD" onChange={inputHandler} /> */}
+          <div>{/* <input type="text" placeholder="month" /> */}</div>
+          <MySelect />
         </li>
         <li>
           <span>Time:</span>
@@ -45,7 +57,12 @@ export const MyTable: FC<IMyTables> = ({
         </li>
       </ul>
       <div className={classes.myTablesBtn}>
-        <MyRippleBtn padding="5px" marginTop="5px" ripple={"#ffffff"}>
+        <MyRippleBtn
+          onCLick={handlerDate}
+          padding="5px"
+          marginTop="5px"
+          ripple={"#ffffff"}
+        >
           Reserved
         </MyRippleBtn>
         <MyRippleBtn padding="5px" marginTop="5px" ripple={"#ffffff"}>

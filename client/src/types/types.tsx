@@ -22,6 +22,8 @@ export interface IBtn {
 }
 
 export interface IMyTables {
+  setDate: (date: string) => void;
+  tables: any[];
   id?: string;
   children: React.ReactNode;
   background?: string;
@@ -31,6 +33,7 @@ export interface IMyTables {
 }
 
 export interface ITables {
+  setDate: (date: string) => void;
   tables: any[];
   showHandler: (id: string) => void;
   checkedHandler: (object: any) => void;

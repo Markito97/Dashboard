@@ -150,7 +150,15 @@ body {
   .tables__container {
     display: flex;
     flex-direction: column;
-    margin: 25px;
+    margin: 15px;
+  }
+
+  .tables {
+    margin-top: 15px;
+  }
+
+  .table__arrangement {
+    margin-right: 15px;
   }
 
   .create__table {
@@ -167,8 +175,20 @@ body {
 
 @media screen and (max-width: 1450px) {
   .table__arrangement {
-    background: green;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
+}
+
+@media screen and (max-width: 1200px) {
+  .item__name {
+    display: none;
+  }
+  .icon__container {
+    margin: 0;
+  }
+}
+
+input {
+  width: 25px;
 }

@@ -4,6 +4,7 @@ import { MyTable } from "../assets/UI/tables/MyTable";
 import { ITables } from "../types/types";
 
 export const Tables: FC<ITables> = ({
+  setDate,
   checkedHandler,
   tables,
   showHandler,
@@ -26,33 +27,19 @@ export const Tables: FC<ITables> = ({
   return (
     <div className="tables">
       <div className="table__arrangement">
-        {/* {tables.map((table, index) => {
-        if (table.tableSize === "small") {
+        {tables.map((table, index) => {
           return (
-            <MyTable key={table.id} id={table.id} onClick={takeTableId}>
+            <MyTable
+              setDate={setDate}
+              tables={tables}
+              key={table.id}
+              id={table.id}
+              // onClick={takeTableId}
+            >
               Small Desk
             </MyTable>
           );
-        } else if (table.tableSize === "average") {
-          return (
-            <MyTable key={table.id} id={table.id} onClick={takeTableId}>
-              {index + 1}
-            </MyTable>
-          );
-        }
-      })} */}
-        <MyTable children={undefined} />
-        <MyTable children={undefined} />
-        <MyTable children={undefined} />
-        <MyTable children={undefined} />
-        <MyTable children={undefined} />
-        <MyTable children={undefined} />
-        <MyTable children={undefined} />
-        <MyTable children={undefined} />
-        <MyTable children={undefined} />
-        <MyTable children={undefined} />
-        <MyTable children={undefined} />
-        <MyTable children={undefined} />
+        })}
       </div>
     </div>
   );
