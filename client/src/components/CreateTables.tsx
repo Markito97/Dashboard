@@ -34,12 +34,8 @@ export const CreateTable: FC<ICreateTableProps> = ({ create }) => {
           <option value="large">Large</option>
         </select>
 
-        <MyRippleBtn padding="5px" ripple={"#ffffff"}>
-          Sort by active
-        </MyRippleBtn>
-        <MyRippleBtn padding="5px" ripple={"#ffffff"}>
-          Sort by reserved
-        </MyRippleBtn>
+        <MyRippleBtn ripple={"#ffffff"}>Sort by active</MyRippleBtn>
+        <MyRippleBtn ripple={"#ffffff"}>Sort by reserved</MyRippleBtn>
       </div>
     </div>
   );

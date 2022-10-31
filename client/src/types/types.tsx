@@ -17,6 +17,7 @@ export interface IBtn {
   height?: string;
   padding?: string;
   margin?: string;
+  marginTop?: string;
   onCLick?: () => void;
 }
 

@@ -45,10 +45,10 @@ export const MyTable: FC<IMyTables> = ({
         </li>
       </ul>
       <div className={classes.myTablesBtn}>
-        <MyRippleBtn padding="5px" ripple={"#ffffff"}>
+        <MyRippleBtn padding="5px" marginTop="5px" ripple={"#ffffff"}>
           Reserved
         </MyRippleBtn>
-        <MyRippleBtn padding="5px" ripple={"#ffffff"}>
+        <MyRippleBtn padding="5px" marginTop="5px" ripple={"#ffffff"}>
           Add Order
         </MyRippleBtn>
       </div>

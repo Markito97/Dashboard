@@ -85,7 +85,6 @@ body {
   border-radius: 10px;
   font-size: 18px;
   color: #fff;
-  padding: 5px;
   text-align: center;
 }
 
@@ -154,10 +153,22 @@ body {
     margin: 25px;
   }
 
+  .create__table {
+    margin: 0;
+  }
+
   .create__table__container {
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 1450px) {
+  .table__arrangement {
+    background: green;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
   }
 }

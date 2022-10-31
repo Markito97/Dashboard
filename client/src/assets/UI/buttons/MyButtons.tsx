@@ -10,6 +10,7 @@ export const MyRippleBtn: FC<IBtn> = ({
   ripple,
   children,
   margin,
+  marginTop,
   onCLick,
 }) => {
   useEffect(() => {
@@ -43,7 +44,7 @@ export const MyRippleBtn: FC<IBtn> = ({
   return (
     <button
       id={`${id}`}
-      style={{ width, height, padding, margin }}
+      style={{ width, height, padding, margin, marginTop }}
       className={`${classes.btn} ${classes.btnRipple}`}
       data-ripple={ripple}
       onClick={onCLick}
