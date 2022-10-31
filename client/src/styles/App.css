@@ -57,20 +57,42 @@ body {
   justify-content: space-between;
 }
 
-.create__table {
-  background: #144771;
+.tables__container {
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+}
+
+.create__table {
+  display: flex;
+  background: #144771;
   margin: 25px;
   justify-content: space-evenly;
-  flex: 0 1 10%;
   border-radius: 10px;
+  flex: 0 1;
+}
+
+.create__table__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 5px 12px;
+  margin: 3px 8px;
+}
+
+.table__select {
+  background: #46abfd;
+  border-radius: 10px;
+  font-size: 18px;
+  color: #fff;
+  padding: 5px;
+  text-align: center;
 }
 
 .tables {
-  margin: 25px;
+  margin-top: 25px;
   overflow-y: scroll;
-  flex: 0 1 70%;
+  flex: auto;
 }
 
 .tables::-webkit-scrollbar {
@@ -98,11 +120,11 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  flex: 0 1 20%;
   margin-left: 25px;
   background: #144771;
   font-size: 18px;
   font-family: inherit;
+  flex: 0 1 25%;
 }
 
 .checkout__menu__item {
@@ -123,4 +145,19 @@ body {
 
 .checkout__paid {
   display: flex;
+}
+
+@media screen and (max-width: 1690px) {
+  .tables__container {
+    display: flex;
+    flex-direction: column;
+    margin: 25px;
+  }
+
+  .create__table__container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }

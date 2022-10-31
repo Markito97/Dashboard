@@ -29,12 +29,14 @@ export const DashBoard: FC<ILarge> = ({
 
   return (
     <div className="dashboard__container">
-      <CreateTable create={createTable} />
-      <Tables
-        checkedHandler={checkedHandler}
-        tables={tables}
-        showHandler={showHandler}
-      />
+      <div className="tables__container">
+        <CreateTable create={createTable} />
+        <Tables
+          checkedHandler={checkedHandler}
+          tables={tables}
+          showHandler={showHandler}
+        />
+      </div>
       <CheckOutTest id={tableId} largeTable={largeTable} isShow={true} />
     </div>
   );
