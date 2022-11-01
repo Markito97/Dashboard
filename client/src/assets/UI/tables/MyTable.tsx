@@ -1,5 +1,5 @@
 import { table } from "console";
-import { FC, useEffect, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import { IMyTables } from "../../../types/types";
 import { MyRippleBtn } from "../buttons/MyButtons";
 import { RemoveSvg } from "../icons/MyIcons";
@@ -19,7 +19,8 @@ export const MyTable: FC<IMyTables> = ({
   const [hours, setHour] = useState("");
   const [minutes, setMinute] = useState("");
 
-  const handlerDate = () => {
+  const handlerDate = (e: React.MouseEvent) => {
+    const btnId = takeTableId(e);
     const date = new Date();
     date.setHours(Number(hours));
     date.setMinutes(Number(minutes));
@@ -31,30 +32,49 @@ export const MyTable: FC<IMyTables> = ({
       minute: "numeric",
       second: "numeric",
     });
-    setDate(dateString);
+    setDate(
+      tables.map((table) => {
+        if (table.id === id) {
+          return { ...table, date: dateString };
+        } else {
+          return table;
+        }
+      })
+    );
+  };
+
+  const takeTableId = (e: React.MouseEvent) => {
+    const id = (e.target as HTMLElement).id;
+    return id;
   };
 
   useEffect(() => {
-    const checkDate = setInterval(() => {
-      const now = new Date();
-      const today = now.toLocaleString("ru-Ru", {
-        year: "numeric",
-        month: "numeric",
-        day: "numeric",
-        hour: "numeric",
-        minute: "numeric",
-        second: "numeric",
-      });
-      tables.forEach((el) => {
-        if (el.date !== undefined) {
-          if (Date.parse(today) > new Date(el.date).getTime()) {
-            console.log(123);
-            clearInterval(checkDate);
-          }
-        }
-      });
-    }, 2000);
-  });
+    // setInterval(() => {
+    //   console.log(tables);
+    // }, 1000);
+    // console.log("Effect");
+    // const checkDate = setInterval(() => {
+    //   const now = new Date();
+    //   const today = now.toLocaleString("ru-Ru", {
+    //     year: "numeric",
+    //     month: "numeric",
+    //     day: "numeric",
+    //     hour: "numeric",
+    //     minute: "numeric",
+    //     second: "numeric",
+    //   });
+    //   // console.log(tables);
+    //   // tables.forEach((el) => {
+    //   //   // if (el.date !== undefined) {
+    //   //   //   if (Date.parse(today) > new Date(el.date).getTime()) {
+    //   //   //     console.log(123);
+    //   //   //     clearInterval(checkDate);
+    //   //   //   }
+    //   //   // }
+    //   //   console.log(Date.parse(today) > new Date(el.date).getTime());
+    //   // });
+    // }, 2000);
+  }, [tables]);
 
   return (
     <div
@@ -103,6 +123,7 @@ export const MyTable: FC<IMyTables> = ({
       </ul>
       <div className={classes.myTablesBtn}>
         <MyRippleBtn
+          id={id}
           onCLick={handlerDate}
           padding="5px"
           marginTop="5px"

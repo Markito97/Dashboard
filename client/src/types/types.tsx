@@ -18,7 +18,7 @@ export interface IBtn {
   padding?: string;
   margin?: string;
   marginTop?: string;
-  onCLick?: () => void;
+  onCLick?: (e: React.MouseEvent) => void;
 }
 
 export interface IMyTables {

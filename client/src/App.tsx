@@ -11,7 +11,11 @@ import { CreateTable } from "./components/CreateTables";
 import { tab } from "@testing-library/user-event/dist/tab";
 
 export const App = () => {
-  const [tables, setTables] = useState<any[]>([]);
+  const [tables, setTables] = useState<any[]>([
+    { id: "1", checked: false, tableSize: "small", date: null, test: null },
+    { id: "2", checked: false, tableSize: "small", date: null },
+    { id: "3", checked: false, tableSize: "small", date: null },
+  ]);
   const [largeTable, setLargeTable] = useState<any[]>([]);
   const [test, setTest] = useState<string>();
 
@@ -19,12 +23,8 @@ export const App = () => {
   //   setLargeTable([...largeTable, object]);
   // };
 
-  const setDate = (date: any) => {
-    setTables(
-      tables.map((table) => {
-        return { ...table, date: date };
-      })
-    );
+  const setDate = (date: object[]) => {
+    setTables(date);
   };
 
   //работает
