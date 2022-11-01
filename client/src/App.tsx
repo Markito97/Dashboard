@@ -12,9 +12,36 @@ import { tab } from "@testing-library/user-event/dist/tab";
 
 export const App = () => {
   const [tables, setTables] = useState<any[]>([
-    { id: "1", checked: false, tableSize: "small", date: null, test: null },
-    { id: "2", checked: false, tableSize: "small", date: null },
-    { id: "3", checked: false, tableSize: "small", date: null },
+    {
+      id: "1",
+      tableName: "Small Desk",
+      checked: false,
+      tableSize: "small",
+      date: null,
+      whoReserved: null,
+      persons: null,
+      telephone: null,
+    },
+    {
+      id: "2",
+      checked: false,
+      tableName: "Small Desk",
+      tableSize: "small",
+      date: null,
+      whoReserved: null,
+      persons: null,
+      telephone: null,
+    },
+    {
+      id: "3",
+      checked: false,
+      tableName: "Small Desk",
+      tableSize: "small",
+      date: null,
+      whoReserved: null,
+      persons: null,
+      telephone: null,
+    },
   ]);
   const [largeTable, setLargeTable] = useState<any[]>([]);
   const [test, setTest] = useState<string>();
@@ -23,7 +50,7 @@ export const App = () => {
   //   setLargeTable([...largeTable, object]);
   // };
 
-  const setDate = (date: object[]) => {
+  const reserved = (date: object[]) => {
     setTables(date);
   };
 
@@ -42,7 +69,7 @@ export const App = () => {
       <div className="main">
         <SideBar />
         <DashBoard
-          setDate={setDate}
+          reserved={reserved}
           tables={tables}
           createTable={createTable}
           checkedHandler={checkedHandler}

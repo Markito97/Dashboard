@@ -1,11 +1,10 @@
 import { FC, useState } from "react";
 import { CheckOutTest } from "../components/CheckOut";
-import { Products } from "../components/Products";
 import { CreateTable } from "../components/CreateTables";
-import { Tables } from "../components/Tables";
+import { Tables } from "../components/tables/Tables";
 
 export interface ILarge {
-  setDate: (date: any) => void;
+  reserved: (date: any) => void;
   tables: any[];
   tableId?: string;
   largeTable?: any[];
@@ -15,12 +14,10 @@ export interface ILarge {
 }
 
 export const DashBoard: FC<ILarge> = ({
-  setDate,
-  checkedHandler,
+  reserved,
   createTable,
   tables,
   largeTable,
-  large,
 }) => {
   const [tableId, setTableId] = useState<string>("");
   const [isShow, setIsShow] = useState(false);
@@ -33,12 +30,7 @@ export const DashBoard: FC<ILarge> = ({
     <div className="dashboard__container">
       <div className="tables__container">
         <CreateTable create={createTable} />
-        <Tables
-          setDate={setDate}
-          checkedHandler={checkedHandler}
-          tables={tables}
-          showHandler={showHandler}
-        />
+        <Tables tables={tables} reserved={reserved} />
       </div>
       <CheckOutTest id={tableId} largeTable={largeTable} isShow={true} />
     </div>

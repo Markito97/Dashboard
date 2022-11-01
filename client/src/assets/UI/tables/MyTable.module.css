@@ -7,6 +7,15 @@
   border-radius: 10px;
 }
 
+.myTablesReserved {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  background: #c2710e;
+  font-size: 18px;
+  border-radius: 10px;
+}
+
 .myTables h1 {
   font-size: 24px;
   padding: 5px 12px;

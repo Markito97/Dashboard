@@ -22,6 +22,7 @@ export interface IBtn {
 }
 
 export interface IMyTables {
+  date: string;
   setDate: (date: any) => void;
   tables: any[];
   id?: string;

@@ -8,6 +8,7 @@ import { MySelect } from "../select/MySelect";
 import classes from "./MyTable.module.css";
 
 export const MyTable: FC<IMyTables> = ({
+  date,
   setDate,
   tables,
   id,
@@ -18,6 +19,7 @@ export const MyTable: FC<IMyTables> = ({
 }) => {
   const [hours, setHour] = useState("");
   const [minutes, setMinute] = useState("");
+  const [flag, setFlag] = useState(false);
 
   const handlerDate = (e: React.MouseEvent) => {
     const btnId = takeTableId(e);
@@ -35,7 +37,8 @@ export const MyTable: FC<IMyTables> = ({
     setDate(
       tables.map((table) => {
         if (table.id === id) {
-          return { ...table, date: dateString };
+          setFlag(true);
+          return { ...table, date: dateString, checked: !table.checked };
         } else {
           return table;
         }
@@ -81,7 +84,7 @@ export const MyTable: FC<IMyTables> = ({
       id={id}
       style={{ width, background }}
       onClick={onClick}
-      className={`${classes.myTables}`}
+      className={flag ? `${classes.myTablesReserved}` : `${classes.myTables}`}
     >
       <div className={classes.myTitle}>
         <h1>Small Desk</h1>
@@ -105,7 +108,7 @@ export const MyTable: FC<IMyTables> = ({
           <MySelect />
         </li>
         <li>
-          <span>Time:</span>
+          <span>{date}</span>
           <span>Time</span>
         </li>
         <li>
