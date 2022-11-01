@@ -22,7 +22,7 @@ export interface IBtn {
 }
 
 export interface IMyTables {
-  setDate: (date: string) => void;
+  setDate: (date: any) => void;
   tables: any[];
   id?: string;
   children: React.ReactNode;

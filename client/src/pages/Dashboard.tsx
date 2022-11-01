@@ -5,7 +5,7 @@ import { CreateTable } from "../components/CreateTables";
 import { Tables } from "../components/Tables";
 
 export interface ILarge {
-  setDate: (date: string) => void;
+  setDate: (date: any) => void;
   tables: any[];
   tableId?: string;
   largeTable?: any[];

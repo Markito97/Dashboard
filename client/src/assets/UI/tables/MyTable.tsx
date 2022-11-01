@@ -1,5 +1,5 @@
 import { table } from "console";
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 import { IMyTables } from "../../../types/types";
 import { MyRippleBtn } from "../buttons/MyButtons";
 import { RemoveSvg } from "../icons/MyIcons";
@@ -16,9 +16,45 @@ export const MyTable: FC<IMyTables> = ({
   width,
   onClick,
 }) => {
+  const [hours, setHour] = useState("");
+  const [minutes, setMinute] = useState("");
+
   const handlerDate = () => {
-    setDate("123");
+    const date = new Date();
+    date.setHours(Number(hours));
+    date.setMinutes(Number(minutes));
+    const dateString = date.toLocaleString("ru-Ru", {
+      year: "numeric",
+      month: "numeric",
+      day: "numeric",
+      hour: "numeric",
+      minute: "numeric",
+      second: "numeric",
+    });
+    setDate(dateString);
   };
+
+  useEffect(() => {
+    const checkDate = setInterval(() => {
+      const now = new Date();
+      const today = now.toLocaleString("ru-Ru", {
+        year: "numeric",
+        month: "numeric",
+        day: "numeric",
+        hour: "numeric",
+        minute: "numeric",
+        second: "numeric",
+      });
+      tables.forEach((el) => {
+        if (el.date !== undefined) {
+          if (Date.parse(today) > new Date(el.date).getTime()) {
+            console.log(123);
+            clearInterval(checkDate);
+          }
+        }
+      });
+    }, 2000);
+  });
 
   return (
     <div
@@ -34,9 +70,18 @@ export const MyTable: FC<IMyTables> = ({
       <ul>
         <li>
           <span>Date:</span>
-          <input type="text" placeholder="DD" />
-          {/* <input type="text" placeholder="DD" onChange={inputHandler} /> */}
-          <div>{/* <input type="text" placeholder="month" /> */}</div>
+          <input
+            value={hours}
+            onChange={(e) => setHour(e.target.value)}
+            type="text"
+            placeholder="hours"
+          />
+          <input
+            value={minutes}
+            onChange={(e) => setMinute(e.target.value)}
+            type="text"
+            placeholder="minute"
+          />
           <MySelect />
         </li>
         <li>
