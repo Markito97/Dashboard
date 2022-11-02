@@ -8,7 +8,7 @@ interface ITableItem {
   reserved: (date: any) => void;
 }
 
-export const TableItem: FC<ITableItem> = ({ table, reserved, tables }) => {
+export const Table: FC<ITableItem> = ({ table, reserved, tables }) => {
   const [times, setTimes] = useState<any>();
 
   const dataHandler = (time: string) => {
@@ -53,22 +53,10 @@ export const TableItem: FC<ITableItem> = ({ table, reserved, tables }) => {
       </div>
       <ul className={classes.table__list__items}>
         <li>
-          <span>Date:</span>
-          <TableForm dataHandler={dataHandler} />
-          <select name="" id="" className={classes.table__select__month}>
-            <option value="">Январь</option>
-            <option value="">Февраль</option>
-            <option value="">Март</option>
-            <option value="">Апрель</option>
-            <option value="">Май</option>
-            <option value="">Июнь</option>
-            <option value="">Июль</option>
-            <option value="">Август</option>
-            <option value="">Сентябрь</option>
-            <option value="">Октябрь</option>
-            <option value="">Ноябрь</option>
-            <option value="">Декабрь</option>
-          </select>
+          <div>
+            <span>Reserve for:</span>
+            <TableForm dataHandler={dataHandler} />
+          </div>
         </li>
         <li>
           <span>Time:</span>

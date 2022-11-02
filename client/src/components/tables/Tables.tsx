@@ -1,6 +1,6 @@
 import React, { FC, useState } from "react";
 import classes from "./Table.module.css";
-import { TableItem } from "./TableItem";
+import { Table } from "./Table";
 
 interface ITables {
   tables: any[];
@@ -12,7 +12,7 @@ export const Tables: FC<ITables> = ({ tables, reserved }) => {
     <div className="tables">
       <div className="table__arrangement">
         {tables.map((table, index) => (
-          <TableItem
+          <Table
             key={index + 1}
             table={table}
             reserved={reserved}
