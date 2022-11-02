@@ -1,5 +1,4 @@
 import { NavLink } from "react-router-dom";
-import { InvestSVG, FolderSVG, CoinSVG } from "../assets/UI/icons/MyIcons";
 
 export const NavBar = () => {
   return (

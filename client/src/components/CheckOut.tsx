@@ -1,7 +1,5 @@
 import { table } from "console";
 import { FC, useEffect, useState } from "react";
-import { MyRippleBtn } from "../assets/UI/buttons/MyButtons";
-import { RemoveSvg } from "../assets/UI/icons/MyIcons";
 
 interface ICheckProps {
   id: string;
@@ -20,9 +18,7 @@ export const CheckOutTest: FC<ICheckProps> = ({ id, largeTable, isShow }) => {
             <span>Description</span>
             <span>5</span>
             <span>100</span>
-            <span>
-              <RemoveSvg />
-            </span>
+            <span></span>
           </li>
           <li className="checkout__list__item">
             <span>2.</span>
@@ -30,9 +26,7 @@ export const CheckOutTest: FC<ICheckProps> = ({ id, largeTable, isShow }) => {
             <span>Description</span>
             <span>5</span>
             <span>100</span>
-            <span>
-              <RemoveSvg />
-            </span>
+            <span></span>
           </li>
           <li className="checkout__list__item">
             <span>3.</span>
@@ -40,13 +34,9 @@ export const CheckOutTest: FC<ICheckProps> = ({ id, largeTable, isShow }) => {
             <span>Description</span>
             <span>5</span>
             <span>100</span>
-            <span>
-              <RemoveSvg />
-            </span>
+            <span></span>
           </li>
         </ul>
-
-        <MyRippleBtn ripple={"#ffffff"}>Add to Cart</MyRippleBtn>
       </div>
     );
   } else {
