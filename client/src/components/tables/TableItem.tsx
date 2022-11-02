@@ -1,5 +1,6 @@
-import { FC, useState } from "react";
+import { FC, useState, useRef } from "react";
 import classes from "./Table.module.css";
+import { TableForm } from "./TableForm";
 
 interface ITableItem {
   table: any;
@@ -8,37 +9,41 @@ interface ITableItem {
 }
 
 export const TableItem: FC<ITableItem> = ({ table, reserved, tables }) => {
-  const [hour, setHour] = useState("");
-  const [minute, setMinute] = useState("");
-  const [times, setTimes] = useState({ hour: "", minute: "" });
+  const [times, setTimes] = useState<any>();
 
-  const setReservedData = (e: React.MouseEvent) => {
-    const tId = (e.target as HTMLElement).id;
-    const date = new Date();
-    date.setHours(Number(times.hour));
-    date.setMinutes(Number(times.minute));
-    const dateString = date.toLocaleString("ru-Ru", {
-      year: "numeric",
-      month: "numeric",
-      day: "numeric",
-      hour: "numeric",
-      minute: "numeric",
-      second: "numeric",
-    });
-    if (times.hour === "" && times.minute === "") {
-      console.error("Zopa");
-    } else {
-      reserved(
-        tables.map((table) => {
-          if (table.id === tId) {
-            return { ...table, date: dateString };
-          } else {
-            return table;
-          }
-        })
-      );
-    }
+  const dataHandler = (time: string) => {
+    setTimes(time);
   };
+
+  console.log(times);
+
+  //   const setReservedData = (e: React.MouseEvent) => {
+  //     const tId = (e.target as HTMLElement).id;
+  //     const date = new Date();
+  //     date.setHours(Number());
+  //     date.setMinutes(Number());
+  //     const dateString = date.toLocaleString("ru-Ru", {
+  //       year: "numeric",
+  //       month: "numeric",
+  //       day: "numeric",
+  //       hour: "numeric",
+  //       minute: "numeric",
+  //       second: "numeric",
+  //     });
+  //     // if (times.hour === "" && times.minute === "") {
+  //     //   console.error("Zopa");
+  //     // } else {
+  //     //   reserved(
+  //     //     tables.map((table) => {
+  //     //       if (table.id === tId) {
+  //     //         return { ...table, date: dateString };
+  //     //       } else {
+  //     //         return table;
+  //     //       }
+  //     //     })
+  //     //   );
+  //     // }
+  //   };
 
   return (
     <div className={classes.table__desk}>
@@ -49,22 +54,7 @@ export const TableItem: FC<ITableItem> = ({ table, reserved, tables }) => {
       <ul className={classes.table__list__items}>
         <li>
           <span>Date:</span>
-          <div className={classes.table__form}>
-            <input
-              value={times.hour}
-              onChange={(e) => setTimes({ ...times, hour: e.target.value })}
-              type="text"
-              placeholder="hours"
-              className={classes.item__hours}
-            />
-            <input
-              value={times.minute}
-              onChange={(e) => setTimes({ ...times, minute: e.target.value })}
-              type="text"
-              placeholder="minutes"
-              className={classes.item__minutes}
-            />
-          </div>
+          <TableForm dataHandler={dataHandler} />
           <select name="" id="" className={classes.table__select__month}>
             <option value="">Январь</option>
             <option value="">Февраль</option>
@@ -98,11 +88,7 @@ export const TableItem: FC<ITableItem> = ({ table, reserved, tables }) => {
         </li>
       </ul>
       <div className={classes.table__btn}>
-        <button
-          id={table.id}
-          onClick={setReservedData}
-          className={classes.reserved__btn}
-        >
+        <button id={table.id} className={classes.reserved__btn}>
           Reserved
         </button>
         <button className={classes.add__to__cart}>Add to cart</button>
