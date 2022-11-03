@@ -1,4 +1,5 @@
-import { FC, useState, useRef } from "react";
+import React from "react";
+import { FC, useState, useRef, createRef } from "react";
 import classes from "./Table.module.css";
 import { TableForm } from "./TableForm";
 
@@ -10,12 +11,10 @@ interface ITableItem {
 
 export const Table: FC<ITableItem> = ({ table, reserved, tables }) => {
   const [times, setTimes] = useState<any>();
-
   const dataHandler = (time: string) => {
     setTimes(time);
   };
-
-  console.log(times);
+  const ref: React.RefObject<any> = React.createRef();
 
   //   const setReservedData = (e: React.MouseEvent) => {
   //     const tId = (e.target as HTMLElement).id;
@@ -55,7 +54,7 @@ export const Table: FC<ITableItem> = ({ table, reserved, tables }) => {
         <li>
           <div>
             <span>Reserve for:</span>
-            <TableForm dataHandler={dataHandler} />
+            <TableForm ref={ref} />
           </div>
         </li>
         <li>
@@ -76,7 +75,11 @@ export const Table: FC<ITableItem> = ({ table, reserved, tables }) => {
         </li>
       </ul>
       <div className={classes.table__btn}>
-        <button id={table.id} className={classes.reserved__btn}>
+        <button
+          id={table.id}
+          onClick={() => ref.current.test()}
+          className={classes.reserved__btn}
+        >
           Reserved
         </button>
         <button className={classes.add__to__cart}>Add to cart</button>

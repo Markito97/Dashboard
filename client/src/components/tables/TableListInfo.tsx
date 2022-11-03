@@ -1,3 +1,7 @@
 export const TableListInfo = () => {
-  return <ul></ul>;
+  return (
+    <ul>
+      <li></li>
+    </ul>
+  );
 };
