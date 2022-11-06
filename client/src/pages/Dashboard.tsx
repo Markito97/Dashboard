@@ -1,6 +1,7 @@
 import { FC, useState } from "react";
 import { CheckOutTest } from "../components/CheckOut";
 import { CreateTable } from "../components/CreateTables";
+import { TableMenu } from "../components/TableMenu";
 import { Tables } from "../components/tables/Tables";
 
 export interface ILarge {
@@ -20,7 +21,7 @@ export const DashBoard: FC<ILarge> = ({
   largeTable,
 }) => {
   const [tableId, setTableId] = useState<string>("");
-  const [isShow, setIsShow] = useState(false);
+  const [isShow, setIsShow] = useState(true);
   const showHandler = (id: string) => {
     setTableId(id);
     setIsShow(true);
@@ -32,7 +33,7 @@ export const DashBoard: FC<ILarge> = ({
         <CreateTable create={createTable} />
         <Tables tables={tables} reserved={reserved} />
       </div>
-      <CheckOutTest id={tableId} largeTable={largeTable} isShow={true} />
+      <TableMenu isShow={isShow} />
     </div>
   );
 };

@@ -111,13 +111,23 @@ body {
 .table__arrangement {
   margin-right: 25px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 25px;
 }
 
 .checkout__menu {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  margin-left: 25px;
+  background: #144771;
+  font-size: 18px;
+  font-family: inherit;
+  flex: 0 1 25%;
+}
+
+.table__menu {
+  display: flex;
   justify-content: space-between;
   margin-left: 25px;
   background: #144771;
