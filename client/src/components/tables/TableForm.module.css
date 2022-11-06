@@ -1,0 +1,11 @@
+.reserved__form {
+  padding: 5px 12px;
+  margin: 3px 8px;
+}
+
+.reserved__form__fields {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 5px 0px 5px 5px;
+}

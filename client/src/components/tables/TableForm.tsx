@@ -1,5 +1,14 @@
-import { FC, forwardRef, useImperativeHandle, useRef, useState } from "react";
-import classes from "./Tables.module.css";
+import {
+  FC,
+  forwardRef,
+  useEffect,
+  useImperativeHandle,
+  useRef,
+  useState,
+} from "react";
+import { MyInput } from "../../assets/UI/MyInput/MyInput";
+import classes from "./TableForm.module.css";
+import { TableFormError } from "./TableFormError";
 
 interface ITableForm {
   dataHandler: (time: string) => void;
@@ -60,32 +69,28 @@ export let TableForm = forwardRef((props, ref) => {
   const hourOnlyNumbersValidator = numberValidator(/^[0-9]+$/);
   const hourFormnatValudation = formatValidation(23);
 
-  return (
-    <div>
-      <div>
-        <label htmlFor="input">hours:</label>
-        <input
-          onChange={(e) => {
-            hourLengthValidator(e.target.value);
-            hourOnlyNumbersValidator(e.target.value);
-          }}
-          type="text"
-          placeholder="hours"
-        />
-        {isError ? (
-          <p>Может содержать только цифры. И длинной от 0 до 2 символов.</p>
-        ) : null}
-      </div>
+  // useEffect(() => {
+  //   const error: HTMLParagraphElement | null = document.querySelector("p");
+  //   if (isError) {
+  //     error!.style.visibility = "visible";
+  //   } else {
+  //     error!.style.visibility = "hidden";
+  //   }
+  // }, [isError]);
 
-      <label htmlFor="input">minutes:</label>
-      <input
-        value={reservedTime.minute}
-        onChange={(e) =>
-          setReservedTime({ ...reservedTime, minute: e.target.value })
-        }
-        type="text"
-        placeholder="minutes"
-      />
+  return (
+    <div className={classes.reserved__form}>
+      <span>Reserved for:</span>
+      <div className={classes.reserved__form__fields}>
+        <label htmlFor="input">hours:</label>
+        <MyInput onChange={(e) => hourLengthValidator(e.target.value)} />
+      </div>
+      <TableFormError isError={isError} />
+
+      <div className={classes.reserved__form__fields}>
+        <label htmlFor="input">minutes:</label>
+        <MyInput onChange={(e) => console.log(123)} />
+      </div>
     </div>
   );
 });

@@ -2,6 +2,7 @@ import React from "react";
 import { FC, useState, useRef, createRef } from "react";
 import classes from "./Table.module.css";
 import { TableForm } from "./TableForm";
+import { TableListInfo } from "./TableListInfo";
 
 interface ITableItem {
   table: any;
@@ -50,30 +51,8 @@ export const Table: FC<ITableItem> = ({ table, reserved, tables }) => {
         <span>{table.tableName}</span>
         <span>icon</span>
       </div>
-      <ul className={classes.table__list__items}>
-        <li>
-          <div>
-            <span>Reserve for:</span>
-            <TableForm ref={ref} />
-          </div>
-        </li>
-        <li>
-          <span>Time:</span>
-          <span>{table.date}</span>
-        </li>
-        <li>
-          <span>Who reserved:</span>
-          <span></span>
-        </li>
-        <li>
-          <span>Persons:</span>
-          <span></span>
-        </li>
-        <li>
-          <span>Telephone:</span>
-          <span></span>
-        </li>
-      </ul>
+      <TableForm />
+      <TableListInfo table={table} />
       <div className={classes.table__btn}>
         <button
           id={table.id}

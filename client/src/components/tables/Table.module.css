@@ -1,17 +1,20 @@
 .table__desk {
+  border: 3px solid #144771;
   display: flex;
   flex-direction: column;
-  color: white;
-  background: #144771;
+  color: black;
+  background: white;
   font-size: 18px;
   border-radius: 10px;
 }
 
 .table__name {
+  font-weight: bold;
+  font-size: 24px;
   display: flex;
   justify-content: space-between;
   padding: 5px 12px;
-  margin: 3px 8px;
+  margin: 16px 8px 0px 8px;
 }
 
 .table__list__items {
@@ -71,8 +74,10 @@
 }
 
 .reserved__btn {
+  color: white;
   border: none;
   border-radius: 10px;
   padding-left: 7px;
   padding-right: 7px;
+  background: #144771;
 }
