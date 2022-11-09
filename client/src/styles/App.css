@@ -58,6 +58,7 @@ body {
 }
 
 .tables__container {
+  position: relative;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -115,25 +116,14 @@ body {
   gap: 25px;
 }
 
-.checkout__menu {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin-left: 25px;
-  background: #144771;
-  font-size: 18px;
-  font-family: inherit;
-  flex: 0 1 25%;
-}
-
 .table__menu {
   display: flex;
   justify-content: space-between;
-  margin-left: 25px;
+  flex-direction: column;
   background: #144771;
   font-size: 18px;
   font-family: inherit;
-  flex: 0 1 25%;
+  flex: 0 1 252px;
 }
 
 .checkout__menu__item {

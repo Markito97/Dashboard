@@ -21,7 +21,7 @@ export const App = () => {
     {
       id: "2",
       checked: false,
-      tableName: "Small Desk",
+      tableName: "Average Desk",
       tableSize: "average",
       date: null,
       whoReserved: null,
@@ -31,77 +31,7 @@ export const App = () => {
     {
       id: "3",
       checked: false,
-      tableName: "Small Desk",
-      tableSize: "large",
-      date: null,
-      whoReserved: null,
-      persons: null,
-      telephone: null,
-    },
-    {
-      id: "4",
-      checked: false,
-      tableName: "Small Desk",
-      tableSize: "large",
-      date: null,
-      whoReserved: null,
-      persons: null,
-      telephone: null,
-    },
-    {
-      id: "4",
-      checked: false,
-      tableName: "Small Desk",
-      tableSize: "large",
-      date: null,
-      whoReserved: null,
-      persons: null,
-      telephone: null,
-    },
-    {
-      id: "2",
-      checked: false,
-      tableName: "Small Desk",
-      tableSize: "average",
-      date: null,
-      whoReserved: null,
-      persons: null,
-      telephone: null,
-    },
-    {
-      id: "1",
-      tableName: "Small Desk",
-      checked: false,
-      tableSize: "small",
-      date: null,
-      whoReserved: null,
-      persons: null,
-      telephone: null,
-    },
-    {
-      id: "3",
-      checked: false,
-      tableName: "Small Desk",
-      tableSize: "large",
-      date: null,
-      whoReserved: null,
-      persons: null,
-      telephone: null,
-    },
-    {
-      id: "3",
-      checked: false,
-      tableName: "Small Desk",
-      tableSize: "large",
-      date: null,
-      whoReserved: null,
-      persons: null,
-      telephone: null,
-    },
-    {
-      id: "3",
-      checked: false,
-      tableName: "Small Desk",
+      tableName: "Large Desk",
       tableSize: "large",
       date: null,
       whoReserved: null,
@@ -109,10 +39,6 @@ export const App = () => {
       telephone: null,
     },
   ]);
-
-  const reserved = (date: object[]) => {
-    setTables(date);
-  };
 
   const createTable = (table: any) => {
     setTables([...tables, table]);
@@ -128,7 +54,6 @@ export const App = () => {
       <div className="main">
         <SideBar />
         <DashBoard
-          reserved={reserved}
           tables={tables}
           createTable={createTable}
           checkedHandler={checkedHandler}

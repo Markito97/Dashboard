@@ -1,13 +1,12 @@
 import React, { FC, useState } from "react";
 import classes from "./Table.module.css";
-import { Table } from "./Table";
 
 interface ITables {
   tables: any[];
-  reserved: (date: any) => void;
+  showHandler: (show: boolean, id: string) => void;
 }
 
-export const Tables: FC<ITables> = ({ tables, reserved }) => {
+export const Tables: FC<ITables> = ({ tables, showHandler }) => {
   return (
     <div className="tables">
       <div className="table__arrangement">
@@ -15,6 +14,8 @@ export const Tables: FC<ITables> = ({ tables, reserved }) => {
           if (table.tableSize === "small") {
             return (
               <div
+                key={table.id}
+                onClick={() => showHandler(true, table.id)}
                 id={table.id}
                 className={`${classes.smallTable} ${classes.table}`}
               >
@@ -25,6 +26,8 @@ export const Tables: FC<ITables> = ({ tables, reserved }) => {
           if (table.tableSize === "large") {
             return (
               <div
+                key={table.id}
+                onClick={() => showHandler(true, table.id)}
                 id={table.id}
                 className={`${classes.largeTable} ${classes.table}`}
               >
@@ -35,6 +38,8 @@ export const Tables: FC<ITables> = ({ tables, reserved }) => {
           if (table.tableSize === "average") {
             return (
               <div
+                key={table.id}
+                onClick={() => showHandler(true, table.id)}
                 id={table.id}
                 className={`${classes.averageTable} ${classes.table}`}
               >
