@@ -16,12 +16,18 @@
 }
 
 .reservedFormItem {
+  margin: 15px 15px 0px 15px;
   display: flex;
   flex-direction: column;
 }
 
 .reservedFormItem input {
   border-radius: 10px;
+  margin-left: 15px;
+}
+
+.reservedFormItem svg {
+  margin-left: 15px;
 }
 
 .reservedField {
@@ -30,11 +36,18 @@
   justify-content: space-between;
 }
 
+.fieldItem {
+  display: flex;
+  align-items: center;
+}
+
 .reservedRequired {
   display: flex;
   color: red;
   font-size: 16px;
   justify-content: center;
+  margin-left: 85px;
+  padding: 5px;
 }
 
 .reservedFormBtn {

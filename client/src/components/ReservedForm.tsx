@@ -1,4 +1,4 @@
-import { FC } from "react";
+import React, { FC, useState } from "react";
 import { Warn } from "../assets/icons/Warn";
 import classes from "./ReservedForm.module.css";
 
@@ -7,9 +7,19 @@ interface IReservedForm {
 }
 
 export const ReservedForm: FC<IReservedForm> = ({ isShowReservedForm }) => {
-  const test = (e: React.FormEvent) => {
+  const [reservedForm, setReservedForm] = useState({
+    date: { strDate: "", isError: false },
+    time: { strTime: "", isError: false },
+  });
+
+  const sendReserved = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(123);
+    if (reservedForm.date.strDate === "") {
+      setReservedForm({
+        ...reservedForm,
+        date: { ...reservedForm.date, isError: true },
+      });
+    }
   };
 
   if (isShowReservedForm) {
@@ -20,8 +30,19 @@ export const ReservedForm: FC<IReservedForm> = ({ isShowReservedForm }) => {
           <div className={classes.reservedFormItem}>
             <div className={classes.reservedField}>
               <label htmlFor="">Date:</label>
-              <input type="text" />
-              <Warn />
+              <div className={classes.fieldItem}>
+                <input
+                  value={reservedForm.date.strDate}
+                  onChange={(e) =>
+                    setReservedForm({
+                      ...reservedForm,
+                      date: { ...reservedForm.date, strDate: e.target.value },
+                    })
+                  }
+                  type="text"
+                />
+                <Warn />
+              </div>
             </div>
             <div className={classes.reservedRequired}>
               <p>Это обязательное поле</p>
@@ -30,8 +51,10 @@ export const ReservedForm: FC<IReservedForm> = ({ isShowReservedForm }) => {
           <div className={classes.reservedFormItem}>
             <div className={classes.reservedField}>
               <label htmlFor="">Time:</label>
-              <input type="text" />
-              <Warn />
+              <div className={classes.fieldItem}>
+                <input type="text" />
+                <Warn />
+              </div>
             </div>
             <div className={classes.reservedRequired}>
               <p>Это обязательное поле</p>
@@ -40,8 +63,10 @@ export const ReservedForm: FC<IReservedForm> = ({ isShowReservedForm }) => {
           <div className={classes.reservedFormItem}>
             <div className={classes.reservedField}>
               <label htmlFor="">Who:</label>
-              <input type="text" />
-              <Warn />
+              <div className={classes.fieldItem}>
+                <input type="text" />
+                <Warn />
+              </div>
             </div>
             <div className={classes.reservedRequired}>
               <p>Это обязательное поле</p>
@@ -50,8 +75,10 @@ export const ReservedForm: FC<IReservedForm> = ({ isShowReservedForm }) => {
           <div className={classes.reservedFormItem}>
             <div className={classes.reservedField}>
               <label htmlFor="">Time:</label>
-              <input type="text" />
-              <Warn />
+              <div className={classes.fieldItem}>
+                <input type="text" />
+                <Warn />
+              </div>
             </div>
             <div className={classes.reservedRequired}>
               <p>Это обязательное поле</p>
@@ -60,8 +87,10 @@ export const ReservedForm: FC<IReservedForm> = ({ isShowReservedForm }) => {
           <div className={classes.reservedFormItem}>
             <div className={classes.reservedField}>
               <label htmlFor="">Persons:</label>
-              <input type="text" />
-              <Warn />
+              <div className={classes.fieldItem}>
+                <input type="text" />
+                <Warn />
+              </div>
             </div>
             <div className={classes.reservedRequired}>
               <p>Это обязательное поле</p>
@@ -70,8 +99,10 @@ export const ReservedForm: FC<IReservedForm> = ({ isShowReservedForm }) => {
           <div className={classes.reservedFormItem}>
             <div className={classes.reservedField}>
               <label htmlFor="">Telephone:</label>
-              <input type="text" />
-              <Warn />
+              <div className={classes.fieldItem}>
+                <input type="text" />
+                <Warn />
+              </div>
             </div>
             <div className={classes.reservedRequired}>
               <p>Это обязательное поле</p>
@@ -79,7 +110,7 @@ export const ReservedForm: FC<IReservedForm> = ({ isShowReservedForm }) => {
           </div>
           {/* <button onClick={send}>reserv</button> */}
           <div className={classes.reservedFormBtn}>
-            <button onClick={test}>test</button>
+            <button onClick={sendReserved}>test</button>
           </div>
         </div>
       </form>
