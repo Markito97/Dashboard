@@ -1,7 +1,6 @@
 import React, { FC, useState } from "react";
-import { Warn } from "../assets/icons/Warn";
-import { MyInput } from "../assets/UI/MyInput/MyInput";
-import { MySelect } from "../assets/UI/MySelect/MySelect";
+import { MyInput } from "../../assets/UI/MyInput/MyInput";
+import { MySelect } from "../../assets/UI/MySelect/MySelect";
 import classes from "./ReservedForm.module.css";
 
 interface IReservedForm {
@@ -67,12 +66,21 @@ export const ReservedForm: FC<IReservedForm> = ({ isShowReservedForm }) => {
   if (isShowReservedForm) {
     return (
       <div className={classes.reservedForm}>
-        <div className={classes.reservedFormItem}>
-          <MyInput>Day</MyInput>
+        <h1 className={classes.reservedFormTitle}>Reserved Form</h1>
+        <div className={classes.reservedFormDate}>
+          <MyInput width="60px">Day</MyInput>
           <MySelect />
-          <MyInput>Year</MyInput>
+          <MyInput width="70px">Year</MyInput>
         </div>
-        <div className={classes.reservedFormItem}>aboba</div>
+        <div className={classes.reservedFormItem}>
+          <MyInput width="190px">Who</MyInput>
+          <MyInput width="105px">Persons</MyInput>
+        </div>
+        <div className={classes.reservedFormTelephone}>
+          <MyInput width="45px">+7</MyInput>
+          <MyInput width="250px">Telephone</MyInput>
+        </div>
+        <button>Reserve</button>
       </div>
     );
   } else {

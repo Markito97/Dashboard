@@ -2,6 +2,8 @@ import { ChangeEvent, FC, useEffect } from "react";
 import classes from "./MyInput.module.css";
 
 interface IMyInput {
+  width?: string;
+  height?: string;
   option?: string;
   children: React.ReactNode;
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
@@ -13,10 +15,13 @@ export const MyInput: FC<IMyInput> = ({
   children,
   onFocus,
   option,
+  width,
+  height,
 }) => {
   return (
     <div className={classes.inputContainer}>
       <input
+        style={{ width: width }}
         value={option}
         onChange={onChange}
         onFocus={onFocus}

@@ -1,7 +1,7 @@
 import { FC, useState } from "react";
 import { CheckOutTest } from "../components/CheckOut";
 import { CreateTable } from "../components/CreateTables";
-import { ReservedForm } from "../components/ReservedForm";
+import { ReservedForm } from "../components/ReservedForm/ReservedForm";
 import { TableMenu } from "../components/TableMenu";
 import { Tables } from "../components/tables/Tables";
 

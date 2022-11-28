@@ -1,8 +1,11 @@
-import { useState } from "react";
-import { MyInput } from "../MyInput/MyInput";
+import React, { FC, useEffect, useState } from "react";
 import classes from "./MySelect.module.css";
 
-export const MySelect = () => {
+interface IMySelect {
+  width?: string;
+}
+
+export const MySelect: FC<IMySelect> = ({ width }) => {
   const [isActive, setIsActive] = useState(false);
   const [option, setOption] = useState("");
   const months = [
@@ -20,21 +23,29 @@ export const MySelect = () => {
     "December",
   ];
 
-  console.log(isActive);
+  useEffect(() => {
+    const handleClick = (e: any) => {
+      console.log((e.target as HTMLElement).className);
+      if ((e.target as HTMLElement).className !== `${classes.selectInput}`) {
+        console.log(123);
+        setIsActive(false);
+      }
+    };
+    document.addEventListener("click", handleClick);
+    return () => {
+      document.removeEventListener("click", handleClick);
+    };
+  }, [isActive]);
 
-  const test = () => {
+  const handleSelect = () => {
     setIsActive(!isActive);
   };
-
   return (
-    <div className={classes.dropDown}>
-      {/* <div
-        className={classes.dropDownBtn}
-        onClick={(e) => setIsActive(!isActive)}
-      ></div> */}
-      <MyInput option={option} onFocus={test}>
-        Months
-      </MyInput>
+    <div className={classes.selectContainer}>
+      <div onClick={handleSelect} className={classes.select}>
+        <div className={classes.selectInput}>{option}</div>
+        <label className={classes.selectLable}>Months</label>
+      </div>
       {isActive && (
         <div className={classes.dropDownContent}>
           {months.map((option, index) => (
