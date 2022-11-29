@@ -2,34 +2,61 @@ import { ChangeEvent, FC, useEffect } from "react";
 import classes from "./MyInput.module.css";
 
 interface IMyInput {
+  id?: string;
+  flag?: boolean;
+  value?: string;
+  inputRef?: React.RefObject<any> | undefined;
   width?: string;
   height?: string;
-  option?: string;
   children: React.ReactNode;
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
   onFocus?: (e: FocusEventInit) => void;
+  onBlur?: () => void;
 }
 
 export const MyInput: FC<IMyInput> = ({
+  id,
   onChange,
   children,
-  onFocus,
-  option,
+  onBlur,
   width,
-  height,
+  value,
 }) => {
+  const test = (e: React.FocusEvent) => {
+    const id = (e.target as HTMLElement).id;
+    const customIputs = Array.from(
+      document.querySelectorAll(`.${classes.customInput}`)
+    );
+    const customLables = Array.from(
+      document.querySelectorAll(`.${classes.customLables}`)
+    );
+    customIputs.forEach((element) => {
+      if (element.id === id) {
+        if ((element as HTMLInputElement).value === "") {
+          element.classList.add(`${classes.aboba}`);
+          // element.classList.
+        } else {
+          element.classList.remove(`${classes.aboba}`);
+        }
+      }
+    });
+  };
+
   return (
     <div className={classes.inputContainer}>
       <input
+        id={id}
+        value={value}
         style={{ width: width }}
-        value={option}
         onChange={onChange}
-        onFocus={onFocus}
+        onBlur={test}
         className={classes.customInput}
         type="text"
         placeholder=" "
       />
-      <label htmlFor="">{children}</label>
+      <label className={classes.cuctomLable} htmlFor="">
+        {children}
+      </label>
     </div>
   );
 };

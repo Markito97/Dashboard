@@ -25,9 +25,7 @@ export const MySelect: FC<IMySelect> = ({ width }) => {
 
   useEffect(() => {
     const handleClick = (e: any) => {
-      console.log((e.target as HTMLElement).className);
       if ((e.target as HTMLElement).className !== `${classes.selectInput}`) {
-        console.log(123);
         setIsActive(false);
       }
     };
@@ -39,6 +37,12 @@ export const MySelect: FC<IMySelect> = ({ width }) => {
 
   const handleSelect = () => {
     setIsActive(!isActive);
+    const selectLable = document.querySelector(`.${classes.selectLable}`);
+    selectLable?.classList.add(`${classes.open}`);
+    console.log(selectLable);
+    // TODO добавить handler ошибки к lable
+    if (isActive) {
+    }
   };
   return (
     <div className={classes.selectContainer}>

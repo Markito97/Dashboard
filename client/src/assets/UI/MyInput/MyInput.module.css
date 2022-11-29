@@ -2,14 +2,21 @@
   position: relative;
 }
 
-.inputContainer .customInput {
+.customInput {
   outline: none;
   border: 3px solid rgb(118, 118, 118);
   border-radius: 3px;
   padding: 12px;
 }
 
-label {
+.customInputError {
+  outline: none;
+  border: 3px solid rgb(255, 1, 1);
+  border-radius: 3px;
+  padding: 12px;
+}
+
+.cuctomLable {
   color: black;
   background: #fff;
   left: 20px;
@@ -31,4 +38,16 @@ label {
 
 .customInput:focus {
   border: 3px solid #46abfd;
+}
+
+.aboba {
+  outline: none;
+  border: 3px solid rgb(250, 3, 3);
+  border-radius: 3px;
+  padding: 12px;
+}
+
+.empty {
+  transform: translateY(-30px) translateX(0px) scale(0.85);
+  color: red;
 }

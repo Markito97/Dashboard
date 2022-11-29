@@ -1,5 +1,5 @@
 .selectContainer {
-  width: 150px;
+  width: 180px;
   margin-left: 15px;
   margin-right: 15px;
 }
@@ -34,18 +34,22 @@
 
 .dropDownContent {
   height: 220px;
-  padding: 12px;
   overflow-y: scroll;
-  width: 150px;
+  width: 180px;
   position: absolute;
   z-index: 1;
   background: white;
 }
 
 .dropDownItem {
+  padding: 12px;
   overflow-x: hidden;
   margin-top: 5px;
   margin-bottom: 5px;
+}
+
+.dropDownItem:hover {
+  background: rgb(118, 118, 118);
 }
 
 .open {
